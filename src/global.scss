@@ -9,3 +9,37 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+//Importando fonte
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,300i,400,700&display=swap');
+
+//Definindo fonte como Global
+*{
+    font-family: 'Nunito', sans-serif;
+}
+
+//Colors 
+$purple: #682189;
+$amarelo: #FCB018;
+$verde: #5EC3AE;
+$dark: #1F2945;
+$snow:#EADECA;
+
+.purple{
+    color: $purple;
+}
+
+.amarelo{
+    color: $amarelo;
+}
+
+.verde{
+    color: $verde;
+}
+
+.dark{
+    color: $dark;
+}
+
+.snow{
+    color: $snow;
+}
