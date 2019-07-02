@@ -10,22 +10,22 @@
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
 //Importando fonte
-@import url('https://fonts.googleapis.com/css?family=Nunito:300,300i,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,700&display=swap');
 
 //Definindo fonte como Global
 *{
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 //Colors 
-$purple: #682189;
+$roxo: #682189;
 $amarelo: #FCB018;
 $verde: #5EC3AE;
 $dark: #1F2945;
 $snow:#EADECA;
 
-.purple{
-    color: $purple;
+.roxo{
+    color: $roxo;
 }
 
 .amarelo{
@@ -43,3 +43,87 @@ $snow:#EADECA;
 .snow{
     color: $snow;
 }
+
+//Align
+.center{
+    text-align: center;
+}
+//Margins
+.no-margin{
+    margin:0px;
+}
+.mg-top-3{
+    margin:3px
+}
+.mg-top-5{
+    margin-top: 5px;
+}
+.mg-top-10{
+    margin-top: 10px;
+}
+.mg-top-15{
+    margin-top: 15px;
+}
+.mg-top-20{
+    margin-top: 20px;
+}
+.mg-top-30{
+    margin-top: 30px;
+}
+.mg-top-40{
+    margin-top: 40px;
+}
+.mg-top-70{
+    margin-top: 70px;
+}
+mg-top-50-percent{
+    margin-top: 50%;
+}
+
+
+//Padding
+.no-padding{
+    padding: 0px;
+}
+.padding-top-10-percent{
+    padding-top:10%;
+}
+
+.padding-30{
+    padding:30px;
+}
+
+.padding-40{
+    padding:40px;
+}
+
+.padding-left-right-15{
+    padding-left:15px;
+    padding-right:15px;
+}
+
+.padding-left-right-20{
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.padding-left-right-40{
+    padding-left:40px;
+    padding-right:40px;
+}
+
+
+//Font Style
+.bold{
+    font-weight: 700;
+}
+
+.light{
+    font-weight: 300;
+}
+
+//Border
+.radius-5{
+    border-radius: 5%;
+}
+

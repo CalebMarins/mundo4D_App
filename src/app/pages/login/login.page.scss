@@ -94,6 +94,7 @@
   }
 
 // PAGE LOGIN
+//Imagem
     .fundo-login{
         width: 100%;
         height: 100%;
@@ -102,14 +103,77 @@
         background-position: center;
     }
 
+//Overlay
     .overlay{
         width:100%;
         height: 100%;
         background: linear-gradient(to top, #682189e1, #682189b2, #682189ab, #68218981)
     }
 
-  
-  
-  
-  
-  
+//Logo Bolinha
+    .logo-bolinha{
+        width:30%;
+    }
+
+//Segmetação
+    .separacao{
+        left:0;
+        right:0;
+        width:90%;
+        margin: 0 auto;
+        top:5%;
+        z-index: 2;
+        color: #5EC3AE;
+    } 
+      //Slides de login/Cadastro
+ion-slides{
+    height: 100%;
+    //COntainer de dados
+    .container-dados{
+    width: 90%;
+    color: #fff;
+    background-color: #773f917e;
+    border-radius: 3px;
+    }     
+}
+
+    .container-dados-esqueceu{
+        width: 100%;
+        color: #fff;
+        background-color: #773f917e;
+        border-radius: 3px;
+        }   
+
+//Tamanho da letra
+    .titulo{
+        font-size: 130%;
+    }
+    ion-item{
+        --background: transparent;
+        --border-radius: 3px;
+    }
+      
+
+//Button Login
+.btn-login{
+    padding: 10px;
+    background: #682189;
+    border-radius: 5px;
+    color: #FCB018 ;
+}
+
+//Button esqueceu senha
+.esqueceu{
+    text-align: right;
+    font-size: 13px;
+}
+
+
+//Button Cadastro
+.btn-cadastro{
+    padding: 10px;
+    background: #682189;
+    border-radius: 5px;
+    color: #5EC3AE ;
+}
+

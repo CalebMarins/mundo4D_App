@@ -6,13 +6,141 @@
     <div class="Aligner-item Aligner-item--bottom"></div>
   </div>
 </div>
-<!-- LOGIN PAGE -->
-<ion-content>
+
+<!-- PAGE -->
+<ion-content class="swiper-no-swiping center">
   <!-- BACKGROUD -->
   <div class="fundo-login">
     <!-- OVERLAY -->
     <div class="overlay">
+      <!-- CONTAINER MAIN -->
+      <div>
+        <!-- LOGO  -->
+        <div class="center padding-top-10-percent">
+          <img src="../../../assets/icon/bolinha80.png" class="logo-bolinha">
+        </div>
+        <div *ngIf="login">
+        <!-- TEXTOS -->
+        <div class="no-padding mg-top-5">
+          <!-- TÍTULO -->
+          <h5 class="bold center amarelo">
+            Olá professor(a)!
+          </h5>         
+        </div>
 
+        <!-- SLIDES LOGIN E CADASTRO -->
+        
+        <!-- SEGMENTO DE SEPARAÇÃO -->
+        <div class="separacao">
+        <ion-segment (ionChange)="segmentChanged($event)" value="login" color="primary">
+            <ion-segment-button value="login">
+              <ion-label class="verde">Login</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="cadastro">
+              <ion-label class="verde">Cadstro</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+        </div>
+        
+        <!-- LOGIN -->
+        <ion-slides class="mg-top-20">
+          <ion-slide>
+            <div class="container-dados padding-left-right-15">
+              <span class="amarelo bold titulo">Login</span>
+              <p class="amarelo center light no-margin mg-top-3">
+                  Insira suas credenciais para continuar
+                </p>
+                  <!-- EMAIL -->
+                  <ion-item class="ion-margin-top" lines="none">
+                  <ion-label position="floating amarelo">Email</ion-label>
+                  <ion-input class="amarelo" type="email" placeholder="Digite seu email" clearInput ></ion-input>
+                </ion-item>
+                <!-- SENHA -->
+                <ion-item class="ion-margin-top" lines="none">
+                    <ion-label position="stacked amarelo">Senha</ion-label>
+                    <ion-input class="amarelo" type="password" placeholder="Digite sua senha" ></ion-input>
+                  </ion-item>
+
+                  <!-- ESQUECEU SUA SENHA -->
+            <div class="esqueceu verde mg-top-10 bold" (click)="exibirEsqueceu()">
+                Esqueceu sua senha?
+              </div>
+
+                <!-- BUTTON LOGAR -->
+                <div class="padding-left-right-20 mg-top-20">
+                    <div class="btn-login center bold" (click)="Login()">
+                      LOGIN
+                    </div>
+                    <br/>
+                  </div>
+              </div>
+          </ion-slide>            
+
+        <!-- CADASTRO PAGE -->
+        <ion-slide>
+        <div class="container-dados padding-left-right-15">
+          
+              <span class="verde bold titulo">Cadastro</span>
+              <p class="verde center light no-margin mg-top-3">
+                  É novo(a) por aqui?<br/>
+                  Então digite seus dados pra se cadastrar
+                </p>
+                <!-- NOME -->
+              <ion-item class="mg-top-5" lines="none">
+                  <ion-label position="stacked verde">Nome</ion-label>
+                <ion-input class="verde" type="text" placeholder="Digite o seu nome"></ion-input>
+              </ion-item>
+              <!-- EMAIL -->
+              <ion-item class="mg-top-5" lines="none">
+                  <ion-label position="stacked verde">Email</ion-label>
+                <ion-input class="verde" type="email" placeholder="Digite o seu email" ></ion-input>
+              </ion-item>
+              <!-- SENHA -->
+              <ion-item class="mg-top-5" lines="none">
+                  <ion-label position="stacked verde">Senha</ion-label>
+                  <ion-input class="verde" type="password" placeholder="Digite a sua senha"></ion-input>
+                </ion-item>
+
+                 <!-- BUTTON CADASTRAR -->
+                 <div class="padding-left-right-20 mg-top-20">
+                    <div class="btn-cadastro center bold" (click)="Cadastro()">
+                      CADASTRAR-SE
+                    </div>
+                    <br/>
+                  </div>
+            </div>
+          </ion-slide>
+        </ion-slides>
+      </div>
+    </div>
+
+    <!-- PAGE ESQUECEU SUA SENHA -->
+    <div *ngIf="esqueceu" class="center padding-left-right-20 mg-top-70">
+        <div class="container-dados-esqueceu mg-top-50-percent">
+          
+            <span class="verde bold titulo center">Esqueceu a senha?</span>
+            <p class="verde center light no-margin mg-top-3">
+                Digite o email cadastrado aqui!
+              </p>
+              <!-- EMAIL -->
+            <ion-item class="mg-top-5" lines="none">
+                <ion-label position="stacked amarelo">Email</ion-label>
+              <ion-input class="amarelo" type="email" placeholder="Digite o seu email" ></ion-input>
+            </ion-item>
+            <!-- BUTTON CADASTRAR -->
+               <div class="padding-left-right-20 mg-top-20">
+                  <div class="btn-login center bold" (click)="reset()">
+                    CONTINUAR
+                  </div>
+                </div>
+                <div class="padding-left-right-20 mg-top-20">
+                    <div class="btn-cadastro center bold" (click)="exibirLogin()">
+                      VOLTAR
+                    </div>
+                    <br/>
+                  </div>
+          </div>
+    </div>
     </div>
   </div>
   </ion-content>
