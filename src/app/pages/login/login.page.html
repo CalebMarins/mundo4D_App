@@ -37,7 +37,7 @@
               <ion-label class="verde">Login</ion-label>
             </ion-segment-button>
             <ion-segment-button value="cadastro">
-              <ion-label class="verde">Cadstro</ion-label>
+              <ion-label class="verde">Cadastro</ion-label>
             </ion-segment-button>
           </ion-segment>
         </div>
@@ -53,12 +53,12 @@
                   <!-- EMAIL -->
                   <ion-item class="ion-margin-top" lines="none">
                   <ion-label position="floating amarelo">Email</ion-label>
-                  <ion-input class="amarelo" type="email" placeholder="Digite seu email" clearInput ></ion-input>
+                  <ion-input class="amarelo" type="email" placeholder="Digite seu email" clearInput [(ngModel)]="loginForm.email"></ion-input>
                 </ion-item>
                 <!-- SENHA -->
                 <ion-item class="ion-margin-top" lines="none">
                     <ion-label position="stacked amarelo">Senha</ion-label>
-                    <ion-input class="amarelo" type="password" placeholder="Digite sua senha" ></ion-input>
+                    <ion-input class="amarelo" type="password" placeholder="Digite sua senha" [(ngModel)]="loginForm.password"></ion-input>
                   </ion-item>
 
                   <!-- ESQUECEU SUA SENHA -->
@@ -68,7 +68,7 @@
 
                 <!-- BUTTON LOGAR -->
                 <div class="padding-left-right-20 mg-top-20">
-                    <div class="btn-login center bold" (click)="Login()">
+                    <div class="btn-login center bold" (click)="fazerLogin()">
                       LOGIN
                     </div>
                     <br/>
@@ -88,22 +88,22 @@
                 <!-- NOME -->
               <ion-item class="mg-top-5" lines="none">
                   <ion-label position="stacked verde">Nome</ion-label>
-                <ion-input class="verde" type="text" placeholder="Digite o seu nome"></ion-input>
+                <ion-input class="verde" type="text" placeholder="Digite o seu nome"[(ngModel)]="cadastroForm.nome"></ion-input>
               </ion-item>
               <!-- EMAIL -->
               <ion-item class="mg-top-5" lines="none">
                   <ion-label position="stacked verde">Email</ion-label>
-                <ion-input class="verde" type="email" placeholder="Digite o seu email" ></ion-input>
+                <ion-input class="verde" type="email" placeholder="Digite o seu email" [(ngModel)]="cadastroForm.email"></ion-input>
               </ion-item>
               <!-- SENHA -->
               <ion-item class="mg-top-5" lines="none">
                   <ion-label position="stacked verde">Senha</ion-label>
-                  <ion-input class="verde" type="password" placeholder="Digite a sua senha"></ion-input>
+                  <ion-input class="verde" clearInput type="password" placeholder="Digite a sua senha"[(ngModel)]="cadastroForm.password"></ion-input>
                 </ion-item>
 
                  <!-- BUTTON CADASTRAR -->
                  <div class="padding-left-right-20 mg-top-20">
-                    <div class="btn-cadastro center bold" (click)="Cadastro()">
+                    <div class="btn-cadastro center bold" (click)="fazerCadastro()">
                       CADASTRAR-SE
                     </div>
                     <br/>
@@ -125,11 +125,11 @@
               <!-- EMAIL -->
             <ion-item class="mg-top-5" lines="none">
                 <ion-label position="stacked amarelo">Email</ion-label>
-              <ion-input class="amarelo" type="email" placeholder="Digite o seu email" ></ion-input>
+              <ion-input class="amarelo" type="email" placeholder="Digite o seu email" [(ngModel)]="esqueceuForm.email"></ion-input>
             </ion-item>
             <!-- BUTTON CADASTRAR -->
                <div class="padding-left-right-20 mg-top-20">
-                  <div class="btn-login center bold" (click)="reset()">
+                  <div class="btn-login center bold" (click)="resetPassword()">
                     CONTINUAR
                   </div>
                 </div>

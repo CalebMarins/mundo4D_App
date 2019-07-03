@@ -1,5 +1,7 @@
 {
   "name": "mundo4D",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
