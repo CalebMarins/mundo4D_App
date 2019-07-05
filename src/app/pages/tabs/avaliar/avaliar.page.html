@@ -1,9 +1,242 @@
+<!-- PÁGINA DE AVALIAÇÃO -->
 <ion-header>
-  <ion-toolbar>
-    <ion-title>avaliar</ion-title>
+  <ion-toolbar color="secondary">
+    <ion-title>Avaliação</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<!-- CONTEUDO -->
+<ion-content padding>
+  <!-- NOME DA ATIVIDADE SOCIOEMOCIONAL -->
+  <ion-label class="bold titulo-pages" color="primary">Nome da atividade:</ion-label>
+
+  <ion-item-divider>
+    <!-- BOTAO DE DÚVIDA -->
+    <ion-buttons slot="end">
+      <ion-button (click)="duvidaNomeAtiv()">
+        <ion-icon name="help-circle" color="primary"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-input class="roxo" type="text" placeholder="Digite o nome da atividade" clearInput></ion-input>
+
+  </ion-item-divider>
+  <br>
+
+  <!-- PILAR DAS ATIVIDADES SOCIOEMOCIONAL -->
+
+  <ion-label class="bold mg-top-20 titulo-pages" color="primary">Escolha o pilar de avaliação:</ion-label>
+
+  <!-- ICONES SOCIOEMOCIONAIS -->
+  <ion-item-divider>
+    <ion-slides pager class="customSlides" color="primary" no-padding>
+
+      <!-- CAMARADA -->
+      <ion-slide (click)="expandirCamarada()">
+        <ion-card class="card">
+          <ion-card-header>
+            <ion-card-content>
+              <img src="assets/socioemocional/camarada.png" class="image center">
+            </ion-card-content>
+            <ion-card-title class="amarelo no-margin">CAMARADA</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-slide>
+
+      <!-- INCANSÁVEL -->
+      <ion-slide (click)="expandirIncansavel()">
+        <ion-card class="card">
+          <ion-card-header>
+            <ion-card-content>
+              <img src="assets/socioemocional/incansavel.png" class="image">
+            </ion-card-content>
+            <ion-card-title class="amarelo">INCANSÁVEL</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-slide>
+
+      <!-- LIDER -->
+      <ion-slide (click)="expandirLider()">
+        <ion-card class="card">
+          <ion-card-header>
+            <ion-card-content>
+              <img src="assets/socioemocional/lider.png" class="image">
+            </ion-card-content>
+            <ion-card-title class="amarelo">LIDER</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-slide>
+
+      <!-- ORIGINAL -->
+      <ion-slide (click)="expandirOriginal()">
+        <ion-card class="card">
+          <ion-card-header>
+            <ion-card-content>
+              <img src="assets/socioemocional/original.png" class="image">
+            </ion-card-content>
+            <ion-card-title class="amarelo">ORIGINAL</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-slide>
+
+      <!-- ZEN -->
+      <ion-slide (click)="expandirZen()">
+        <ion-card class="card">
+          <ion-card-header>
+            <ion-card-content>
+              <img src="assets/socioemocional/zen.png" class="image">
+            </ion-card-content>
+            <ion-card-title class="amarelo">ZEN</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </ion-item-divider>
+
+  <!-- EXPANDIR CAMARADA -->
+  <div *ngIf="camarada">
+    <ion-item class="roxo">
+      <!-- BOTAO DE expand -->
+      <ion-buttons slot="end">
+        <ion-button (click)="expandirAvaliarTuto()">
+          <ion-icon name="arrow-down" color="primary"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-thumbnail class="thumb">
+        <img src='/assets/socioemocional/camarada.png' class="image-thumb">
+      </ion-thumbnail>
+      <ion-label>
+        <h5 class="titulo-thumb">CAMARADA</h5>
+        <p class="subtitulo-thumb">
+          Colaboração
+        </p>
+      </ion-label>
+    </ion-item>
+  </div>
+
+  <!-- EXPANDIR INCANSÁVEL -->
+  <div *ngIf="incansavel">
+    <ion-item class="roxo">
+      <!-- BOTAO DE expand -->
+      <ion-buttons slot="end">
+        <ion-button (click)="expandirAvaliarTuto()">
+          <ion-icon name="arrow-down" color="primary"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-thumbnail class="thumb">
+        <img src='/assets/socioemocional/incansavel.png' class="image-thumb">
+      </ion-thumbnail>
+      <ion-label>
+        <h5 class="titulo-thumb">INCANSÁVEL</h5>
+        <p class="subtitulo-thumb">
+          Capacidade de <br /> Realização
+        </p>
+      </ion-label>
+    </ion-item>
+  </div>
+
+  <!-- EXPANDIR LÍDER -->
+  <div *ngIf="lider">
+    <ion-item class="roxo">
+      <!-- BOTAO DE expand -->
+      <ion-buttons slot="end">
+        <ion-button (click)="expandirAvaliarTuto()">
+          <ion-icon name="arrow-down" color="primary"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-thumbnail class="thumb">
+        <img src='/assets/socioemocional/lider.png' class="image-thumb">
+      </ion-thumbnail>
+      <ion-label>
+        <h5 class="titulo-thumb">LÍDER</h5>
+        <p class="subtitulo-thumb">
+          Extroversão
+        </p>
+      </ion-label>
+    </ion-item>
+  </div>
+
+  <!-- EXPANDIR ORIGINAL -->
+  <div *ngIf="original">
+    <ion-item class="roxo">
+      <!-- BOTAO DE expand -->
+      <ion-buttons slot="end">
+        <ion-button (click)="expandirAvaliarTuto()">
+          <ion-icon name="arrow-down" color="primary"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-thumbnail class="thumb">
+        <img src='/assets/socioemocional/original.png' class="image-thumb">
+      </ion-thumbnail>
+      <ion-label>
+        <h5 class="titulo-thumb">ORIGINAL</h5>
+        <p class="subtitulo-thumb">
+          Abertura ao Novo
+        </p>
+      </ion-label>
+    </ion-item>
+  </div>
+
+  <!-- EXPANDIR ZEN -->
+  <div *ngIf="zen">
+    <ion-item class="roxo">
+      <!-- BOTAO DE expand -->
+      <ion-buttons slot="end">
+        <ion-button (click)="expandirAvaliarTuto()">
+          <ion-icon name="arrow-down" color="primary"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-thumbnail class="thumb">
+        <img src='/assets/socioemocional/zen.png' class="image-thumb">
+      </ion-thumbnail>
+      <ion-label>
+        <h5 class="titulo-thumb">ZEN</h5>
+        <p class="subtitulo-thumb">
+          Estabilidade <br />Emocional
+        </p>
+      </ion-label>
+    </ion-item>
+  </div>
+
+  <!-- TUTORIAL SOCIOEMOCIONAL DE AVALIAÇÃO -->
+  <div *ngIf="tuto">
+    <ion-item>
+      <ion-thumbnail>
+        <img src='/assets/avaliacao/1.png' class="image-thumb">
+      </ion-thumbnail>
+      <ion-label>
+        <p class="bad">
+          Conservador, apegado a saus <br/>ideias e regras, rotineiro e<br/> convencional
+        </p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-thumbnail>
+        <img src='/assets/avaliacao/2.png' class="image-thumb">
+      </ion-thumbnail>
+    </ion-item>
+    <ion-item>
+      <ion-thumbnail>
+        <img src='/assets/avaliacao/3.png' class="image-thumb">
+      </ion-thumbnail>
+    </ion-item>
+    <ion-item>
+      <ion-thumbnail>
+        <img src='/assets/avaliacao/4.png' class="image-thumb">
+      </ion-thumbnail>
+    </ion-item>
+    <ion-item>
+      <ion-thumbnail>
+        <img src='/assets/avaliacao/5.png' class="image-thumb">
+      </ion-thumbnail>
+      <ion-label>
+        <p class="top">
+          Criativo, curioso, inovador, <br/>imaginativo, aceita outras ideias
+        </p>
+      </ion-label>
+    </ion-item>
+
+
+
+  </div>
 
 </ion-content>

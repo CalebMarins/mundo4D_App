@@ -4,7 +4,7 @@ import {AuthProvider} from '../../../providers/auth';
 import {FirebaseProvider} from '../../../providers/data';
 import { Router } from '@angular/router';
 import {Storage} from '@ionic/storage'
-import { calcPossibleSecurityContexts } from '@angular/compiler/src/template_parser/binding_parser';
+
 
 
 
@@ -83,14 +83,20 @@ export class LoginPage implements OnInit {
     //Alert de falha Login2 - Usuário desabilitado
     const alertFail2 = await this.alertController.create({
       header: 'Falha',
-      message: 'Sua conta foi desabilitada por tempo indeterminado',
+      message: 'Sua conta foi desabilitada por tempo indeterminado!',
       buttons: ['OK']
     });
 
-    //Alert de falha Login3 - Usuário e/ou senha inocrretos
+    //Alert de falha Login3 - Usuário não existe
     const alertFail3 = await this.alertController.create({
       header: 'Falha',
-      message: 'Usuário e/ou senha incorretos',
+      message: 'Usuário não cadastrado! <br/> Faça seu cadastro para continuar!',
+      buttons: ['OK']
+    });
+
+    const alertFail4 = await this.alertController.create({
+      header: 'Falha',
+      message: 'A senha paara o usuário digitado está incorreta!',
       buttons: ['OK']
     });
 
@@ -110,7 +116,7 @@ export class LoginPage implements OnInit {
             this.storage.set('usuario', data)
               .then(() => {
                 load.dismiss();
-                this.router.navigate(['home'])
+                this.router.navigate(['master'])
               })
 
           })
@@ -123,8 +129,12 @@ export class LoginPage implements OnInit {
         else if (erro.code == 'auth/user-disabled') {
           alertFail2.present();
         }
-        else {
+
+        else if ('auth/user-not-found') {
           alertFail3.present();
+        }
+        else{
+          alertFail4.present();
         }
 
       })

@@ -1,9 +1,68 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>recursos</ion-title>
+  <ion-toolbar color="secondary">
+    <ion-title>Recursos</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <!-- LISTA -->
+  <ion-label class="bold titulo-pages" color="primary">Salas</ion-label>
+
+  <!-- Caso não tenha nenhuma sala salva -->
+  <ion-list *ngIf="!salas.length">
+    <ion-item *ngFor="let item of [0, 1, 2, 3, 4, 5, 6]">
+      <ion-avatar slot="start">
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-avatar>
+      <ion-label>
+        <h3>
+          <ion-skeleton-text animated style="width:60%"></ion-skeleton-text>
+        </h3>
+        <p></p>
+        <p>
+          <ion-skeleton-text animated style="width:80%"></ion-skeleton-text>
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Caso tenha salas salvas -->
+  <ion-list>
+    <ion-item-sliding *ngFor="let s of salas">
+      <!-- Arrastar paa o lado para editar -->
+      <ion-item-options side="start">
+          <ion-item-option color="tertiary" [routerLink]="['/classroom', s.id]">
+            EDITAR
+          </ion-item-option>
+        </ion-item-options>
+      <ion-item button>
+        <ion-avatar slot="start">
+          <img [src]="s.picture">
+        </ion-avatar>
+        <ion-label>
+          <h5 class="titulo-sala">
+          {{s.nomeSala}}
+        </h5>
+          <p class="subtitulo-sala">
+            {{s.nomeColegio}}
+          </p>
+        </ion-label>
+      </ion-item>
+
+      <!-- Arrastar paa o lado para excluir -->
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="deleteSala(s.id)">
+          Excluir
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <!-- Adicionar outra Sala -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/classroom">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>

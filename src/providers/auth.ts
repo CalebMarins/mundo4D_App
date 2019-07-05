@@ -17,4 +17,8 @@ import { AngularFireAuth } from 'angularfire2/auth';
     resetPass(email: string) {
         return this.afAuth.auth.sendPasswordResetEmail(email);
     }
+
+    getAuth(){
+        return this.afAuth.auth;
+    }
 }

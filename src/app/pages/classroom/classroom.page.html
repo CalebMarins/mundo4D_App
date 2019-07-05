@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <!-- VOLTANDO PRA PÁGINA PRINCIPAL -->
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Adicionar sala</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- ADICIONAR SALA -->
+<ion-content padding>
+  <!-- NOME DO COLÉGIO -->
+  <ion-label class="bold titulo-pages" color="primary">Escreva o nome do Colégio:</ion-label>
+  <ion-item class="mg-top-15">
+    <ion-input type="text" [(ngModel)]="sala.nomeColegio" placeholder="Nome do colégio" color="secondary"></ion-input>
+  </ion-item>
+
+  <!-- NOME DA SALA -->
+  <p class="mg-top-30">
+    <ion-label class="bold titulo-pages" color="primary">Escreva o nome da Sala:</ion-label>
+    <ion-item class="mg-top-15">
+      <ion-input type="text" [(ngModel)]="sala.nomeSala" placeholder="Nome da sala" color="secondary"></ion-input>
+    </ion-item>
+  </p>
+
+  <!-- LINK DE IMAGEM SALA OU COLÉGIO -->
+  <p class="mg-top-30">
+    <ion-label class="bold titulo-pages" color="primary">Insira aqui o link de imagem:</ion-label>
+    <ion-item class="mg-top-15">
+      <ion-input type="text" [(ngModel)]="sala.picture" placeholder="Foto da sala ou colégio" color="secondary">
+      </ion-input>
+      <ion-buttons slot="end">
+        <ion-button (click)="duvidaFoto()">
+          <ion-icon name="help-circle" color="primary"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </p>
+  <div class="padding-left-right-20 mg-top-40">
+      <div class="btn-salvar center" (click)="salvarSala()">
+          <ion-icon name="save"></ion-icon>
+        SALVAR SALA
+    </div>
+    </div>
+ 
+</ion-content>
+
+<!-- BOTÃO DE SALVAR -->
+<ion-footer>
+    
+</ion-footer>

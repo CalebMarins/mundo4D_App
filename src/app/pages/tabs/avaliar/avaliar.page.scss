@@ -1,0 +1,51 @@
+//Icones socioemocionais
+.image{
+    margin-left: 14%;
+    width:70%;
+    height: 50%;
+  
+}
+
+// slides
+.card{
+    width:200px !important;
+    height: 200px;
+    margin-left: 0%;
+    margin-right: 0%;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #682189;
+}
+
+//Tamanho Thumb
+.thumb{
+    height: 100px;
+    width: 100px;
+}
+//Tratamento Imagem Thumb
+.image-thumb{
+    height: 100%;
+    width: 100%;
+}
+
+//Formatação do título da thumb
+.titulo-thumb{
+    font-size: 18px;
+    font-weight: 550;
+}
+
+//Subtítulo da Thumb
+.subtitulo-thumb{
+    color: #FCB018;
+    font-size: 15px;
+}
+
+.bad{
+    color:#E95764;
+}
+
+.top{
+    color: #5EC3AE;
+}
+

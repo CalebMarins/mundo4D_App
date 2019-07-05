@@ -16,11 +16,12 @@ const routes: Routes = [
       { path: 'rx-aluno', loadChildren: '../rx-aluno/rx-aluno.module#RxAlunoPageModule' },
       { path: 'perfil', loadChildren: '../perfil/perfil.module#PerfilPageModule' },
       { path: 'recursos', loadChildren: '../recursos/recursos.module#RecursosPageModule' },
+      { path: 'recursos/:id', loadChildren: '../recursos/recursos.module#RecursosPageModule' },
       { path: 'home', loadChildren: '../home/home.module#HomePageModule'}
     ]
   },{
     path:'',
-    redirectTo: 'tabs/home',
+    redirectTo: 'tabs/avaliar',
     pathMatch:'full'
   }
   
