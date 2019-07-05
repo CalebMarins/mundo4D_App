@@ -48,7 +48,7 @@ export class ClassroomPage implements OnInit {
   async duvidaFoto() {
     const duvida = await this.alert.create({
       header: 'Inserir link de imagem',
-      message: 'salve a imagem em algum drive e copie o link compartilhável aqui',
+      message: 'Salve a imagem em algum drive e copie o link compartilhável aqui! <br/> De preferência, selecione imagens como, por exemplo, a <b>logo do colégio</b>',
 
       buttons: ['OK']
     });
@@ -73,6 +73,7 @@ export class ClassroomPage implements OnInit {
     }
     // Senão criar uma nova sala
     else {
+      this.loading.dismiss();
       try {
         await this.salaService.addSala(this.sala);
         this.loading.dismiss();
@@ -84,12 +85,15 @@ export class ClassroomPage implements OnInit {
       }
     }
   }
+  //Loading
   async mostrarLoading(){
     this.loading = await this.loadingController.create({
       message:'Por favor, aguarde...'
     });
     return this.loading.present();
   }
+
+  //Toast
   async mostrarToast(message: string){
     const toast = await this.toastC.create({
       message,
