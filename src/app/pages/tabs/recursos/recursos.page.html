@@ -28,7 +28,7 @@
 
   <!-- Caso tenha salas salvas -->
   <ion-list>
-    <ion-item-sliding *ngFor="let s of salas">
+    <ion-item-sliding *ngFor="let s of salas" class="sla">
       <!-- Arrastar paa o lado para editar -->
       <ion-item-options side="start">
           <ion-item-option color="tertiary" [routerLink]="['/classroom', s.id]">
@@ -37,21 +37,21 @@
         </ion-item-options>
 
         <!-- Item sala de aula -->
-      <ion-item button [routerLink]="'/alunos'">
-        <ion-avatar slot="start" class="avatar">
-          <img [src]="s.picture">
-        </ion-avatar>
-        <ion-label>
+        <ion-item button [routerLink]="'/alunos'" class="sla">      
+        <ion-card class="sla">
+          <img [src]="s.picture" class="imagem-card-sala">
+        <ion-card-content>
           <h5 class="titulo-sala">
           {{s.nomeSala}}
         </h5>
           <p class="subtitulo-sala">
             {{s.nomeColegio}}
           </p>
-        </ion-label>
-      </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
 
-      <!-- Arrastar paa o lado para excluir -->
+      <!-- Arrastar para o lado para excluir -->
       <ion-item-options side="end">
         <ion-item-option color="danger" (click)="deleteSala(s.id)">
           Excluir

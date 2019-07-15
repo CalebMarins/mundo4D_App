@@ -48,7 +48,7 @@ export class ClassroomPage implements OnInit {
   async duvidaFoto() {
     const duvida = await this.alert.create({
       header: 'Inserir link de imagem',
-      message: 'Salve a imagem em algum drive e copie o link compartilhável aqui! <br/> De preferência, selecione imagens como, por exemplo, a <b>logo do colégio</b>',
+      message: 'Pegue uma imagem bem bonita da sua sala ou do colégio! <p>Copie o <b class="roxo">link</b> e cole aqui!</p>',
 
       buttons: ['OK']
     });
@@ -65,9 +65,10 @@ export class ClassroomPage implements OnInit {
         await this.salaService.updateSala(this.salaId, this.sala);
         this.loading.dismiss();
         this.navcrtrl.navigateBack('master/tabs/recursos');
+        this.mostrarToast('Sala atualizada com sucesso!');
       } catch (error) {
         this.loading.dismiss();
-        this.mostrarToast('Erro ao tentar criar Sala');
+        this.mostrarToast('Erro ao tentar editar Sala');
         
       }
     }
@@ -78,6 +79,7 @@ export class ClassroomPage implements OnInit {
         await this.salaService.addSala(this.sala);
         this.loading.dismiss();
         this.navcrtrl.navigateBack('master/tabs/recursos');
+        this.mostrarToast('Sala criada com sucesso!');
       } catch (error) {
         this.loading.dismiss();
         this.mostrarToast('Erro ao tentar criar Sala');

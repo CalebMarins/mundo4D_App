@@ -9,8 +9,8 @@
 <ion-content padding>
   <!-- NOME DA ATIVIDADE SOCIOEMOCIONAL -->
   <ion-label class="bold titulo-pages" color="primary">Nome da atividade:</ion-label>
-
   <ion-item-divider>
+
     <!-- BOTAO DE DÚVIDA -->
     <ion-buttons slot="end">
       <ion-button (click)="duvidaNomeAtiv()">
@@ -18,7 +18,6 @@
       </ion-button>
     </ion-buttons>
     <ion-input class="roxo" type="text" placeholder="Digite o nome da atividade" clearInput></ion-input>
-
   </ion-item-divider>
   <br>
 
@@ -61,7 +60,7 @@
             <ion-card-content>
               <img src="assets/socioemocional/lider.png" class="image">
             </ion-card-content>
-            <ion-card-title class="amarelo">LIDER</ion-card-title>
+            <ion-card-title class="amarelo">LÍDER</ion-card-title>
           </ion-card-header>
         </ion-card>
       </ion-slide>
@@ -181,7 +180,7 @@
     <ion-item class="roxo">
       <!-- BOTAO DE expand -->
       <ion-buttons slot="end">
-        <ion-button (click)="expandirAvaliarTuto()">
+        <ion-button (click)="expandirAvaliarTuto()" (click)="retrairAvaliarTuto()">
           <ion-icon name="arrow-down" color="primary"></ion-icon>
         </ion-button>
       </ion-buttons>

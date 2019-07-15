@@ -1,0 +1,66 @@
+// Header dos cards da página RxAluno
+.card-header{
+    background-color: #5EC3AE;
+    color:#fff;
+}
+
+//Título dos card
+.titulo-card{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+//Tamanho da fonte no card comportamento
+.comportamento-title{
+    font-size:110%;
+}
+
+//Tamanho da fonte no card de Raio-x Socioemocional
+.rx-title{
+    font-size:103%;
+}
+//Tamanho geral da thumbnail
+.thumb{  
+    width: 95px;
+    height: 95px;
+}
+
+//Edição da imagem na thumbnail
+.image-thumb{
+    width: 64px;
+    height: auto;
+    
+}
+
+//Formatação específica da imagem exemplar para centralização
+.exemplar-image-thumb{
+    margin-left: 2%;
+}
+//Formatação específica da imagem inadequado para centralização
+.inadequado-image-thumb{
+    margin-left:10%;
+}
+
+.thumb-exemplar{
+    margin-left:3%;
+}
+
+//Alinhamento do conteúdo
+.conteudo{
+    text-align: right;
+}
+
+
+//Exemplar conteúdo card comportamental
+.exemplar-title{
+    color: #FCB018;
+    font-size: 12px;
+  
+}
+
+//Espaçamento referente ao conteúdo exemplar
+.conteudo-comportamento-exemplar{
+    margin-left: 15px;
+}
+
+

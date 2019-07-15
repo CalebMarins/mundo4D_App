@@ -14,7 +14,13 @@ export class AvaliarPage implements OnInit {
   lider = false;
   original = false;
   zen = false;
+  camarada1 = false;
+  incansavel1 = false;
+  lider1 = false;
+  original1 = false;
+  zen1 = false;
   tuto=false;
+
 
   constructor(
     private alert: AlertController
@@ -80,6 +86,11 @@ export class AvaliarPage implements OnInit {
   expandirAvaliarTuto(){
     this.tuto = true;
     
+  }
+
+  retrairAvaliarTuto(){
+    
+    this.tuto= false;
   }
 
   

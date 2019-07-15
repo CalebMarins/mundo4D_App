@@ -1,99 +1,73 @@
 <ion-header>
   <ion-toolbar color="secondary">
     <ion-buttons slot="start">
-      <!-- VOLTANDO PRA PÁGINA PRINCIPAL -->
+      <!-- VOLTANDO PRA PÁGINA RECURSOS -->
       <ion-back-button color="primary"></ion-back-button>
     </ion-buttons>
-    <ion-title>Alunos</ion-title>
+    <ion-title>Sala de aula</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
+
+<!-- LISTA -->
+<ion-label class="bold titulo-pages" color="primary">Alunos</ion-label>
+
+<!-- Caso não tenha nenhuma alunos salvos na sala -->
+<ion-list *ngIf="!alunos.length">
+  <ion-item *ngFor="let item of [0, 1, 2, 3, 4, 5, 6, 7, 8]">
+    <ion-avatar slot="start">
+      <ion-skeleton-text animated></ion-skeleton-text>
+    </ion-avatar>
+    <ion-label>
+      <h3>
+        <ion-skeleton-text animated style="width:60%"></ion-skeleton-text>
+      </h3>
+      <p></p>
+      <p>
+        <ion-skeleton-text animated style="width:80%"></ion-skeleton-text>
+      </p>
+    </ion-label>
+  </ion-item>
+</ion-list>
+
+<!-- Caso tenha salas alunos -->
+<ion-list>
+  <ion-item-sliding *ngFor="let a of alunos">
+    <!-- Arrastar paa o lado para editar -->
+    <ion-item-options side="start">
+        <ion-item-option color="tertiary" [routerLink]="['/novo-aluno', a.id]">
+          EDITAR
+        </ion-item-option>
+      </ion-item-options>
+
+      <!-- Item sala de aula -->
     <ion-item button [routerLink]="'/master/tabs/rx-aluno'">
+      <ion-avatar slot="start" class="avatar">
+        <img [src]="a.picture">
+      </ion-avatar>
       <ion-label>
         <h5 class="nome-aluno">
-        Ana Carolina
+        {{a.nome}}
       </h5>
         <p class="sobrenome-aluno">
-        Vale da Silva
+          {{a.sobrenome}}
         </p>
       </ion-label>
     </ion-item>
 
-    <ion-item button [routerLink]="'/master/tabs/rx-aluno'">
-      <ion-label>
-        <h5 class="nome-aluno">
-       André
-      </h5>
-        <p class="sobrenome-aluno">
-        Bontempi
-        </p>
-      </ion-label>
-    </ion-item>
+    <!-- Arrastar para o lado para excluir -->
+    <ion-item-options side="end">
+      <ion-item-option color="danger" (click)="deleteAluno(a.id)">
+        Excluir
+      </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
 
-    <ion-item button [routerLink]="'/master/tabs/rx-aluno'">
-      <ion-label>
-        <h5 class="nome-aluno">
-        Beatriz
-      </h5>
-        <p class="sobrenome-aluno">
-        Camargo Rocha
-        </p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item button [routerLink]="'/master/tabs/rx-aluno'">
-      <ion-label>
-        <h5 class="nome-aluno">
-        Guilherme
-      </h5>
-        <p class="sobrenome-aluno">
-        Marques da Silva
-        </p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item button [routerLink]="'/master/tabs/rx-aluno'">
-      <ion-label>
-        <h5 class="nome-aluno">
-        Maria Eduarda
-      </h5>
-        <p class="sobrenome-aluno">
-        Padovini Silva Leis
-        </p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item button [routerLink]="'/master/tabs/rx-aluno'">
-      <ion-label>
-        <h5 class="nome-aluno">
-        Paula
-      </h5>
-        <p class="sobrenome-aluno">
-        Assalim Toledo
-        </p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item button [routerLink]="'/master/tabs/rx-aluno'">
-      <ion-label>
-        <h5 class="nome-aluno">
-        Ricardo
-      </h5>
-        <p class="sobrenome-aluno">
-        Basttos Filho
-        </p>
-      </ion-label>
-    </ion-item>
-
-    <ion-item button [routerLink]="'/master/tabs/rx-aluno'">
-      <ion-label>
-        <h5 class="nome-aluno">
-        Roberto
-      </h5>
-        <p class="sobrenome-aluno">
-        Marins Ferreira Bispo
-        </p>
-      </ion-label>
-    </ion-item>
-
+<!-- Adicionar outra Sala -->
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button routerLink="/novo-aluno">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
 </ion-content>
