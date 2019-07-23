@@ -1,10 +1,7 @@
 <ion-header>
-  <ion-toolbar color="secondary">
-    <ion-buttons slot="start">
-      <!-- VOLTANDO PRA PÁGINA PRINCIPAL -->
-      <ion-back-button color="primary"></ion-back-button>
-    </ion-buttons>
-    <ion-title>Adicionar sala</ion-title>
+  <ion-toolbar color="secondary" mode="ios" class="titulo-pages">
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title class="titulo-pages">Adicionar Sala</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -38,14 +35,11 @@
     </ion-item>
   </p>
 
-
-  <!-- BOTÃO DE SALVAR -->  
+  <!-- BOTÃO DE SALVAR -->
   <div class="padding-left-right-20 mg-top-40">
-      <div class="btn-salvar center" (click)="salvarSala()">
-          <ion-icon name="save"></ion-icon>
-        SALVAR SALA
+    <div class="btn-salvar center" (click)="salvarSala()">
+      <ion-icon name="save"></ion-icon>
+      SALVAR SALA
     </div>
-    </div>
- 
+  </div>
 </ion-content>
-

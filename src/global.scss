@@ -132,3 +132,16 @@ mg-top-50-percent{
     font-size: 20px;
 }
 
+//Quebra de linha
+.wrap{
+    white-space: normal;
+    display: block;
+}
+
+//FORMATAÇÃO DO PROFILE BUUTON
+.profile-button{
+    --color-activated: #FCB018;
+    --color-hover:#FCB018;
+    --color-focusable: #FCB018;
+}
+

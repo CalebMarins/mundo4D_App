@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { generateExpandoInstructionBlock } from '@angular/core/src/render3/instructions';
 import { AlertController } from '@ionic/angular';
+import { Aluno } from 'src/app/interfaces/aluno';
+import { Subscription } from 'rxjs';
+import { AlunoService } from 'src/app/services/aluno.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-avaliar',
@@ -9,6 +13,7 @@ import { AlertController } from '@ionic/angular';
 })
 export class AvaliarPage implements OnInit {
 
+  nothing = true;
   camarada = false;
   incansavel = false;
   lider = false;
@@ -20,11 +25,20 @@ export class AvaliarPage implements OnInit {
   original1 = false;
   zen1 = false;
   tuto=false;
+  aluninho = false;
 
+  private alunos = new Array<Aluno>();
+  private alunoSubscription : Subscription;
 
   constructor(
-    private alert: AlertController
-  ) { }
+    private router: Router,
+    private alert: AlertController,
+    private alunoService : AlunoService,
+    ) {
+    this.alunoSubscription = this.alunoService.getAlunos().subscribe(data=>{
+      this.alunos = data
+    });
+  }
 
   ngOnInit() {
   }
@@ -42,55 +56,68 @@ export class AvaliarPage implements OnInit {
 
   expandirCamarada() {
     this.camarada = true;
+    this.aluninho = true;
     this.incansavel = false;
     this.lider = false;
     this. original = false;
     this.zen = false;
     this.tuto = false;
+    this.nothing = false;
   }
   expandirIncansavel() {
     this.incansavel = true;
+    this.aluninho = true;
     this.camarada = false;
     this.lider = false;
     this. original = false;
     this.zen = false;
     this.tuto = false;
+    this.nothing = false;
   }
 
   expandirLider() {
     this.lider = true;
+    this.aluninho = true;
     this.camarada = false;
     this.incansavel = false;
     this. original = false;
     this.zen = false;
     this.tuto = false;
+    this.nothing = false;
   }
 
   expandirOriginal() {
     this.original = true;
+    this.aluninho = true;
     this.camarada = false;
     this.incansavel = false;
     this. lider = false;
     this.zen = false;
     this.tuto = false;
+    this.nothing = false;
   }
 
   expandirZen() {
     this.zen = true;
+    this.aluninho = true;
     this.camarada = false;
     this.incansavel = false;
     this. lider = false;
     this.original = false;
     this.tuto = false;
+    this.nothing = false;
   }
   expandirAvaliarTuto(){
     this.tuto = true;
-    
   }
 
   retrairAvaliarTuto(){
-    
     this.tuto= false;
+  }
+
+  //Indo pra perfil page
+  perfil(){
+    this.router.navigate(['perfil']);
   }
 
   

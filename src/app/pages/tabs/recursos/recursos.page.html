@@ -1,8 +1,12 @@
+<!-- PÁGINA DE RECURSOS -->
 <ion-header>
-  <ion-toolbar color="secondary">
-    <ion-title>Recursos</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar color="secondary"  mode ="ios">
+        <ion-button icon-only slot="start" class="profile-button" color="secondary" routerLink="/perfil" mode="ios">
+          <ion-icon name="person"></ion-icon>
+        </ion-button>      
+      <ion-title class="center titulo-pages">Recursos</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
 <ion-content padding>
   <!-- LISTA -->
@@ -37,14 +41,14 @@
         </ion-item-options>
 
         <!-- Item sala de aula -->
-        <ion-item button [routerLink]="'/alunos'" class="sla">      
-        <ion-card class="sla">
+        <ion-item button [routerLink]="'/alunos'" lines="none">      
+        <ion-card class="card-formata">
           <img [src]="s.picture" class="imagem-card-sala">
         <ion-card-content>
-          <h5 class="titulo-sala">
+          <h5 class="titulo-sala center">
           {{s.nomeSala}}
         </h5>
-          <p class="subtitulo-sala">
+          <p class="subtitulo-sala center">
             {{s.nomeColegio}}
           </p>
         </ion-card-content>
@@ -66,5 +70,4 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-
 </ion-content>

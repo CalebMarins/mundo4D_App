@@ -17,6 +17,5 @@ import {
             .doc(uid)
             .get();
     }
-    
 }
 

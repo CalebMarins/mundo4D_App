@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Salas } from 'src/app/interfaces/salas';
 import { Subscription } from 'rxjs';
 import { SalasService } from 'src/app/services/salas.service';
-import { LoadingController, ToastController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-recursos',
@@ -11,12 +11,11 @@ import { LoadingController, ToastController } from '@ionic/angular';
 })
 export class RecursosPage implements OnInit {
 
-  private loading : any;
   private salas = new Array <Salas>();
   private salasSubscription: Subscription;
   constructor(
     private salaService : SalasService,
-    private loadingController: LoadingController,
+    private alert: AlertController,
     private toastC: ToastController
     ) {
     this.salasSubscription = this.salaService.getSalas().subscribe(data=>{
@@ -32,23 +31,32 @@ export class RecursosPage implements OnInit {
   }
 
   async deleteSala(id:string){
-    await this.mostrarLoading();   
-    try {
-      await this.salaService.deleteSala(id);
-      this.loading.dismiss();
-      this.mostrarToast('Sala deletada com sucesso!');
-    } catch (error) {
-      this.loading.dismiss();
-      this.mostrarToast('Erro ao tentar deletar!');
-    }
+    const alertConfirma = await this.alert.create({
+      header: 'Deletar sala',
+      message: 'Tem certeza que quer deletar essa sala?',
+      buttons: [
+        {
+          text: 'Sim, deletar',
+          handler: () => {
+            try {
+              this.salaService.deleteSala(id);
+              this.mostrarToast('Sala deletada com sucesso!');
+            } catch (error) {
+              this.mostrarToast('Erro ao tentar deletar!');
+            }
+          }
+        },
+        {
+          text: 'Cancelar',
+          handler: () => {
+          }
+        }
+      ]
+    }); 
+    alertConfirma.present();
+    
   }
 
-  async mostrarLoading(){
-    this.loading = await this.loadingController.create({
-      message:'Por favor, aguarde...'
-    });
-    return this.loading.present();
-  }
   async mostrarToast(message: string){
     const toast = await this.toastC.create({
       message,

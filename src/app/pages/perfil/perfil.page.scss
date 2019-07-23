@@ -1,0 +1,60 @@
+// Fundo de imagem
+.fundo-lindo{
+    // Altura
+    height: 175px;
+    // Fundo
+    background-image:url(../../../assets/perfil/fundo-amarelo.png);
+    background-size: cover;
+    width: 100%;
+    position: absolute;
+    // border-radius:5px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px
+}
+
+// Botão voltar para navegação 
+.back-button{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    margin-top:20px;
+    margin-left: 20px;
+    color: #fafafa;
+}
+
+// Foto de perfil
+.foto-perfil{
+    //Centralizando
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    //Margin top 
+    margin-top:115px;
+    //tamanho
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid;
+    border-color: #682189;
+    
+}
+
+// Alinnhando a posição dos dados do usuário
+.dados{
+    margin-top:238px;
+}
+//Formatação do nome de perfil do usuário
+.nome-perfil{
+    font-size: 24px
+}
+
+//Formataçaõ do email do perfil do usuário
+.email-perfil{
+    font-size: 13px;
+}
+
+.divider{
+    background: #d6d6d698;
+    height: 10px;
+    border-radius: 1px;
+}

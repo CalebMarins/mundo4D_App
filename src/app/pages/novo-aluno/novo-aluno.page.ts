@@ -5,7 +5,6 @@ import { AuthProvider } from './../../../providers/auth';
 import { AlertController, LoadingController, ToastController, NavController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { Aluno } from 'src/app/interfaces/aluno';
-import { AngularFirestoreCollection } from 'angularfire2/firestore';
 
 @Component({
   selector: 'app-novo-aluno',
@@ -50,6 +49,15 @@ export class NovoAlunoPage implements OnInit {
     this.aluno.userId = this.ap.getAuth().currentUser.uid;
 
     if(this.alunoId){
+      try {
+        await this.alunoService.updateALuno(this.alunoId, this.aluno);
+        this.loading.dismiss();
+        this.navctrl.navigateBack('/alunos');
+        this.mostrarToast('Aluno(a) atualizado(a) com sucesso!');
+      } catch (error) {
+        this.loading.dismiss();
+        this.mostrarToast('Erro ao tentar editar o(a) aluno(a)');
+      }
 
     }else{
       this.loading.dismiss();

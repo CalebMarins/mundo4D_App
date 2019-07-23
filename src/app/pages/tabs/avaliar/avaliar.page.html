@@ -1,9 +1,12 @@
 <!-- PÁGINA DE AVALIAÇÃO -->
 <ion-header>
-  <ion-toolbar color="secondary">
-    <ion-title>Avaliação</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar color="secondary"  mode ="ios">
+        <ion-button icon-only slot="start" class="profile-button" color="secondary" (click)="perfil()" mode="ios">
+          <ion-icon name="person"></ion-icon>
+        </ion-button>      
+      <ion-title class="center titulo-pages">Avaliar</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
 <!-- CONTEUDO -->
 <ion-content padding>
@@ -26,7 +29,7 @@
   <ion-label class="bold mg-top-20 titulo-pages" color="primary">Escolha o pilar de avaliação:</ion-label>
 
   <!-- ICONES SOCIOEMOCIONAIS -->
-  <ion-item-divider>
+  <ion-item mode="md" lines="none">
     <ion-slides pager class="customSlides" color="primary" no-padding>
 
       <!-- CAMARADA -->
@@ -89,15 +92,15 @@
         </ion-card>
       </ion-slide>
     </ion-slides>
-  </ion-item-divider>
+  </ion-item>
 
   <!-- EXPANDIR CAMARADA -->
   <div *ngIf="camarada">
-    <ion-item class="roxo">
+    <ion-item class="roxo" lines="none">
       <!-- BOTAO DE expand -->
       <ion-buttons slot="end">
         <ion-button (click)="expandirAvaliarTuto()">
-          <ion-icon name="arrow-down" color="primary"></ion-icon>
+          <ion-icon name="help"></ion-icon>
         </ion-button>
       </ion-buttons>
       <ion-thumbnail class="thumb">
@@ -114,11 +117,11 @@
 
   <!-- EXPANDIR INCANSÁVEL -->
   <div *ngIf="incansavel">
-    <ion-item class="roxo">
+    <ion-item class="roxo" lines="none">
       <!-- BOTAO DE expand -->
       <ion-buttons slot="end">
         <ion-button (click)="expandirAvaliarTuto()">
-          <ion-icon name="arrow-down" color="primary"></ion-icon>
+          <ion-icon name="help"></ion-icon>
         </ion-button>
       </ion-buttons>
       <ion-thumbnail class="thumb">
@@ -126,8 +129,8 @@
       </ion-thumbnail>
       <ion-label>
         <h5 class="titulo-thumb">INCANSÁVEL</h5>
-        <p class="subtitulo-thumb">
-          Capacidade de <br /> Realização
+        <p class="subtitulo-thumb wrap">
+          Capacidade de Realização
         </p>
       </ion-label>
     </ion-item>
@@ -135,11 +138,11 @@
 
   <!-- EXPANDIR LÍDER -->
   <div *ngIf="lider">
-    <ion-item class="roxo">
+    <ion-item class="roxo" lines="none">
       <!-- BOTAO DE expand -->
       <ion-buttons slot="end">
         <ion-button (click)="expandirAvaliarTuto()">
-          <ion-icon name="arrow-down" color="primary"></ion-icon>
+          <ion-icon name="help"></ion-icon>
         </ion-button>
       </ion-buttons>
       <ion-thumbnail class="thumb">
@@ -156,11 +159,11 @@
 
   <!-- EXPANDIR ORIGINAL -->
   <div *ngIf="original">
-    <ion-item class="roxo">
+    <ion-item class="roxo" lines="none">
       <!-- BOTAO DE expand -->
       <ion-buttons slot="end">
         <ion-button (click)="expandirAvaliarTuto()">
-          <ion-icon name="arrow-down" color="primary"></ion-icon>
+          <ion-icon name="help"></ion-icon>
         </ion-button>
       </ion-buttons>
       <ion-thumbnail class="thumb">
@@ -168,7 +171,7 @@
       </ion-thumbnail>
       <ion-label>
         <h5 class="titulo-thumb">ORIGINAL</h5>
-        <p class="subtitulo-thumb">
+        <p class="subtitulo-thumb wrap">
           Abertura ao Novo
         </p>
       </ion-label>
@@ -177,11 +180,11 @@
 
   <!-- EXPANDIR ZEN -->
   <div *ngIf="zen">
-    <ion-item class="roxo">
+    <ion-item class="roxo" lines="none">
       <!-- BOTAO DE expand -->
       <ion-buttons slot="end">
-        <ion-button (click)="expandirAvaliarTuto()" (click)="retrairAvaliarTuto()">
-          <ion-icon name="arrow-down" color="primary"></ion-icon>
+        <ion-button (click)="expandirAvaliarTuto()">
+          <ion-icon name="help"></ion-icon>
         </ion-button>
       </ion-buttons>
       <ion-thumbnail class="thumb">
@@ -189,8 +192,8 @@
       </ion-thumbnail>
       <ion-label>
         <h5 class="titulo-thumb">ZEN</h5>
-        <p class="subtitulo-thumb">
-          Estabilidade <br />Emocional
+        <p class="subtitulo-thumb wrap">
+          Estabilidade Emocional
         </p>
       </ion-label>
     </ion-item>
@@ -198,44 +201,110 @@
 
   <!-- TUTORIAL SOCIOEMOCIONAL DE AVALIAÇÃO -->
   <div *ngIf="tuto">
-    <ion-item>
+    <!-- MUITO RUIM -->
+    <ion-item lines="none">
       <ion-thumbnail>
         <img src='/assets/avaliacao/1.png' class="image-thumb">
       </ion-thumbnail>
       <ion-label>
-        <p class="bad">
-          Conservador, apegado a saus <br/>ideias e regras, rotineiro e<br/> convencional
-        </p>
+        <div class="bad wrap">
+          Conservador, apegado a saus ideias e regras, rotineiro e convencional
+        </div>
       </ion-label>
     </ion-item>
-    <ion-item>
+    <!-- RUIM -->
+    <ion-item lines="none">
       <ion-thumbnail>
         <img src='/assets/avaliacao/2.png' class="image-thumb">
       </ion-thumbnail>
     </ion-item>
-    <ion-item>
+    <!-- NORMAL -->
+    <ion-item lines="none">
       <ion-thumbnail>
         <img src='/assets/avaliacao/3.png' class="image-thumb">
       </ion-thumbnail>
     </ion-item>
-    <ion-item>
+    <!-- BOM -->
+    <ion-item lines="none">
       <ion-thumbnail>
         <img src='/assets/avaliacao/4.png' class="image-thumb">
       </ion-thumbnail>
     </ion-item>
-    <ion-item>
+    <!-- MUITO BOM -->
+    <ion-item lines="none">
       <ion-thumbnail>
         <img src='/assets/avaliacao/5.png' class="image-thumb">
       </ion-thumbnail>
       <ion-label>
-        <p class="top">
-          Criativo, curioso, inovador, <br/>imaginativo, aceita outras ideias
+        <p class="top wrap">
+          Criativo, curioso, inovador, <br />imaginativo, aceita outras ideias
         </p>
       </ion-label>
     </ion-item>
-
-
-
   </div>
 
+  <div *ngIf="aluninho">
+    <!-- LISTA -->
+    <ion-label class="bold titulo-pages" color="primary">Avalie sua turma</ion-label>
+
+    <!-- Caso não tenha nenhuma alunos salvos na sala -->
+    <ion-list *ngIf="!alunos.length">
+      <ion-item *ngFor="let item of [0, 1, 2, 3, 4]">
+        <ion-avatar slot="start">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-avatar>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width:60%"></ion-skeleton-text>
+          </h3>
+          <p></p>
+          <p>
+            <ion-skeleton-text animated style="width:80%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <!-- Caso tenha salas alunos -->
+    <ion-list lines="none">
+      <!-- Lista de alunos -->
+      <ion-item *ngFor="let a of alunos" lines="nome" mode="md">
+        <ion-label>
+          <!-- IMAGEM DE PERFIL DO ALUNO -->
+          <ion-avatar class="avatar-alunos">
+            <img [src]="a.picture">
+          </ion-avatar>
+          <!-- NOME DO ALUNO -->
+          <h5 class="nome-aluno">
+            {{a.nome}}
+          </h5>
+          <p class="roxo">
+            {{a.sobrenome}}
+          </p>
+        </ion-label>
+        <ion-label class="avalia-label">
+          <img src='/assets/avaliacao/1.png' class="image-avaliacao">
+          <img src='/assets/avaliacao/2.png' class="image-avaliacao">
+          <img src='/assets/avaliacao/3.png' class="image-avaliacao">
+          <img src='/assets/avaliacao/4.png' class="image-avaliacao">
+          <img src='/assets/avaliacao/5.png' class="image-avaliacao">
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <div class="padding-left-right-20 mg-top-40">
+        <div class="btn-salvar-avaliacao center">
+      <ion-icon name="clipboard"></ion-icon>
+          SALVAR AVALIAÇÃO
+      </div>
+      </div>
+  </div>
+
+
+  <!-- AINDA NÃO TEM NADA -->
+  <div *ngIf="nothing" class="mg-top-30">
+    <img src='/assets/avaliacao/nothing-roxo.png' class="nothing-img">
+    <h3 class="nothing-texto center">
+      Ainda não há nenhum <b class="roxo">pilar de avaliação</b> selecionado!
+    </h3>
+  </div>
 </ion-content>

@@ -18,6 +18,20 @@
     background-color: #682189;
 }
 
+//Imagem quando ainda não se tem nada
+.nothing-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75px;
+    height: 75px;
+}
+//FORMATAÇÃO DO TEXTO QUANDO AINDA NÃO SE TEM UM PILAR SELECIONADO
+.nothing-texto{
+    color: #5b4c63;
+    font-size: 130%;
+}
+
 //Tamanho Thumb
 .thumb{
     height: 100px;
@@ -41,11 +55,39 @@
     font-size: 15px;
 }
 
+//FORMATAÇÃO TEXTO MUITO RUIM
 .bad{
     color:#E95764;
 }
 
+//FORMATAÇÃO TEXTO MUITO BOM 
 .top{
     color: rgb(33, 131, 113);
 }
 
+//FORMATAÇÃO PARA O NOME DO(A) ALUNO(A)
+.nome-aluno{
+    color: #682189;
+    font-size: 18px;
+    font-weight: 550;
+}
+//FORMATAÇÃO DOS EMOJIS DE AVALIAÇÃO
+.avalia-label{
+    position: absolute;
+    margin-left:50%;
+}
+
+//FORMATAÇÃO PARA ESPECIFICAÇÃO DE TAMANHO DE CADA EMOJI
+.image-avaliacao{
+    width: 30px;
+    height: 30px;
+}
+
+//FORMATAÇÃO DO BOTÃO DE SALVAR
+.btn-salvar-avaliacao{
+    padding: 10px;
+    background: #FCB018;
+    border-radius: 5px;
+    color: #fafafa;
+    font-weight: 550;
+}

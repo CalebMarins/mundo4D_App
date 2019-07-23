@@ -1,31 +1,86 @@
+<!-- PÁGINA HOME -->
 <ion-header>
-  <ion-toolbar color= "secondary">
-    <ion-title>
-      Home
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar color="secondary"  mode ="ios">
+        <ion-button icon-only slot="start" class="profile-button" color="secondary" routerLink="/perfil" mode="ios">
+          <ion-icon name="person"></ion-icon>
+        </ion-button>      
+      <ion-title class="center titulo-pages">Home</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
 <ion-content padding>
-  <ion-label class="titulo-pages bold" color="primary"> Bom dia Prof Caleb!</ion-label>
+  <ion-label class="titulo-pages bold" color="primary"> Bom dia Prof!</ion-label>
 
   <!-- AQUI VEM A DATA DO DIA DE HOJE -->
 
-  <ion-card class="center atividade-title-card">
+  <ion-card class="atividade-title-card">
+      <ion-buttons slot="end">
+          <ion-button (click)="duvidaAvaliacao()" class="sla">
+            <ion-icon name="help-circle-outline" color="primary"></ion-icon>
+          </ion-button>
+        </ion-buttons>
     <ion-card-header>
+        
     <ion-card-title>
       <div class="formatacao-atividade-title-card">
           ATIVIDADES REALIZADAS
-          <ion-buttons slot="end">
-        <ion-button (click)="duvidaAvaliacao()">
-          <ion-icon name="help-circle-outline" color="primary"></ion-icon>
-        </ion-button>
-      </ion-buttons>
+          
       </div>
     </ion-card-title>
   </ion-card-header>
     <ion-card-content>
   </ion-card-content>
   </ion-card>
+  <!-- LISTA -->
+<ion-label class="bold titulo-pages" color="primary">Sua turma</ion-label>
+
+<!-- Caso não tenha nenhuma alunos salvos na sala -->
+<ion-list *ngIf="!alunos.length">
+  <ion-item *ngFor="let item of [0, 1, 2, 3, 4]">
+    <ion-avatar slot="start">
+      <ion-skeleton-text animated></ion-skeleton-text>
+    </ion-avatar>
+    <ion-label>
+      <h3>
+        <ion-skeleton-text animated style="width:60%"></ion-skeleton-text>
+      </h3>
+      <p></p>
+      <p>
+        <ion-skeleton-text animated style="width:80%"></ion-skeleton-text>
+      </p>
+    </ion-label>
+  </ion-item>
+</ion-list>
+
+<!-- Caso tenha salas alunos -->
+<ion-list lines="full">
+      <!-- Lista de alunos -->
+    <ion-item *ngFor="let a of alunos" lines="nome" mode="md">
+      <!-- BOTÃO COMPORTAMENTO EXEMPLAR -->
+      <ion-thumbnail slot="start" class="avatar">
+          <ion-badge color="primary">{{nE}}</ion-badge>
+        <img button src='/assets/comportamento/exemplar.png' (click)=comportamentoExemplar()>
+      </ion-thumbnail>
+      <ion-label class="center">
+          <!-- IMAGEM DE PERFIL DO ALUNO -->
+        <ion-avatar class="avatar-alunos">
+          <img [src]="a.picture">
+        </ion-avatar>
+        <!-- NOME DO ALUNO -->
+        <h5 class="nome-aluno">
+        {{a.nome}}
+      </h5>
+      <p class="sobrenome-aluno">
+        {{a.sobrenome}}
+      </p>
+      </ion-label>
+      <!-- BOTÃO COMPORTAMENTO INADEQUADO -->
+    <ion-thumbnail slot="end" class="avatar" (click)="comportamentoInadequado()">
+        <ion-badge color="secondary">{{nI}}</ion-badge>
+      <img button src='/assets/comportamento/inadequado.png'>
+    </ion-thumbnail>
+  </ion-item>
+</ion-list>
+
 </ion-content>
  

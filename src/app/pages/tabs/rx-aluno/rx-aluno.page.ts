@@ -1,3 +1,4 @@
+import { AngularFirestore } from 'angularfire2/firestore';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {Chart} from 'chart.js';
 
@@ -8,6 +9,10 @@ import {Chart} from 'chart.js';
   styleUrls: ['./rx-aluno.page.scss'],
 })
 export class RxAlunoPage implements OnInit {
+
+  // //Amostragem de telas, caso tenha alunos selecionados, ou não
+  // nothing = true;
+  // conteudo = false;
 
   // NOMEANDO GRÁFICO RADAR SOCIOEMOCIONAL
   @ViewChild ('radarCanvas') radarCanvas;
@@ -20,8 +25,9 @@ export class RxAlunoPage implements OnInit {
   
   radarChart : any;
   lineChart : any;
+
   constructor(
-   
+   private fs : AngularFirestore 
   ) { }
 
   ngOnInit(){

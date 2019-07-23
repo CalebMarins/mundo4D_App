@@ -3,7 +3,7 @@ import { IonSlides, LoadingController, AlertController } from '@ionic/angular';
 import {AuthProvider} from '../../../providers/auth';
 import {FirebaseProvider} from '../../../providers/data';
 import { Router } from '@angular/router';
-import {Storage} from '@ionic/storage'
+import {Storage} from '@ionic/storage';
 
 
 

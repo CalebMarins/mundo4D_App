@@ -5,7 +5,6 @@ import { AuthProvider } from 'src/providers/auth';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { SalasService } from 'src/app/services/salas.service';
-import { IfStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-classroom',
@@ -26,7 +25,6 @@ export class ClassroomPage implements OnInit {
     private activatedRoute: ActivatedRoute,
     private salaService: SalasService,
     private navcrtrl : NavController
-
   ) {
     this.salaId = this.activatedRoute.snapshot.params['id'];
     if (this.salaId) this.loadSala();

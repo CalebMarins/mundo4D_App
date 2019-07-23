@@ -40,12 +40,12 @@ export class AlunoService {
 
    //Pegar o aluno x para uma possível alteração
    updateALuno(id:string, aluno : Aluno){
-
+    return this.alunosCollection.doc<Aluno>(id).update(aluno);
    }
 
    //Deletar aluno
    deleteAluno(id : string){
-
+    return this.alunosCollection.doc(id).delete();
    }
 
 

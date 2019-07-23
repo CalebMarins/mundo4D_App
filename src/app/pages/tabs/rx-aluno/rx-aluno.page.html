@@ -1,145 +1,161 @@
+<!-- PÁGINA RX ALUNO -->
 <ion-header>
-  <ion-toolbar color="secondary">
-    <ion-title>RX Aluno</ion-title>
+  <ion-toolbar color="secondary" mode="ios">
+    <ion-button icon-only slot="start" class="profile-button" color="secondary" routerLink="/perfil" mode="ios">
+      <ion-icon name="person"></ion-icon>
+    </ion-button>
+    <ion-title class="center titulo-pages">RX Aluno</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+    <!-- <ion-searchbar animated (ionInput)="search()" [(ngModel)]="queryText"></ion-searchbar>
+    <ion-item *ngFor="let aluno of resultArr">
+      
+        <ion-avatar>
+          <img src="{{aluno.picture}}">
+        </ion-avatar>
+        <ion-label>
+        <ion-note>
+          {{aluno.nome}}
+        </ion-note>
+      </ion-label>
+    </ion-item> -->
 
-  <!-- NOME DO ALUNO -->
-      <ion-label class="bold titulo-pages" color="primary">Aluno XXXXXXXXXXX</ion-label>
+    <!-- NOME DO ALUNO -->
+    <ion-label class="bold titulo-pages" color="primary">Aluno</ion-label>
 
-      <!-- CARD COMPORTAMENTAL -->
-      <ion-card class="mg-top-20">
-        <ion-card-header class="center card-header">
-          <ion-title>
-            <div class="titulo-card comportamento-title">COMPORTAMENTO</div>
-          </ion-title>
-        </ion-card-header>
-        <ion-card-content>
-          <!-- DETALHE SOBRE ATIVIDADES EXEMPLARES -->
-          <ion-item>
-              <ion-thumbnail class="thumb thumb-exemplar">
-                  <img src='/assets/comportamento/exemplar.png' class="image-thumb exemplar-image-thumb">
-                  <p class="exemplar-title">
-                      EXEMPLAR
-                     </p>
-                </ion-thumbnail>
-                
-                <ion-label> 
-                    <p class="conteudo-comportamento-exemplar">
-                        ainda não se obteve nenhum <br>relato de compotamento<br> exemplar :(
-                       </p>
-                  </ion-label>
-          </ion-item>
-          <!-- DETALHE SOBRE ATIVIDADES INADEQUADAS -->
-          <ion-item>
-            <!-- THUMBNAIL COMPORTAMENTO INADEQUADO -->
-              <ion-thumbnail class="thumb">
-                  <img src='/assets/comportamento/inadequado.png' class="image-thumb inadequado-image-thumb">
-                  <p class="exemplar-title">
-                      INADEQUADO
-                     </p>
-                </ion-thumbnail>
-                
-                <ion-label> 
-                  <!-- CONTEÚDO QUE SERÁ COLOCADO NO COMPORTAMENTO INADEQUADO -->
-                    <p class="conteudo-comportamento-exemplar">
-                        ainda não se obteve nenhum <br>relato de compotamento<br> inadequado :)
-                       </p>
-                  </ion-label>
-          </ion-item>
-        </ion-card-content>
-      </ion-card>
+    <!-- CARD COMPORTAMENTAL -->
+    <ion-card class="mg-top-20">
+      <ion-card-header class="center card-header">
+        <ion-title>
+          <div class="titulo-card comportamento-title">COMPORTAMENTO</div>
+        </ion-title>
+      </ion-card-header>
+      <ion-card-content>
+        <!-- DETALHE SOBRE ATIVIDADES EXEMPLARES -->
+        <ion-item>
+          <ion-thumbnail class="thumb thumb-exemplar">
+            <img src='/assets/comportamento/exemplar.png' class="image-thumb exemplar-image-thumb">
+            <p class="exemplar-title">
+              EXEMPLAR
+            </p>
+          </ion-thumbnail>
+
+          <ion-label>
+            <p class="conteudo-comportamento-exemplar wrap">
+              ainda não se obteve nenhum relato de compotamento exemplar :(
+            </p>
+          </ion-label>
+        </ion-item>
+        <!-- DETALHE SOBRE ATIVIDADES INADEQUADAS -->
+        <ion-item>
+          <!-- THUMBNAIL COMPORTAMENTO INADEQUADO -->
+          <ion-thumbnail class="thumb">
+            <img src='/assets/comportamento/inadequado.png' class="image-thumb inadequado-image-thumb">
+            <p class="exemplar-title">
+              INADEQUADO
+            </p>
+          </ion-thumbnail>
+
+          <ion-label>
+            <!-- CONTEÚDO QUE SERÁ COLOCADO NO COMPORTAMENTO INADEQUADO -->
+            <p class="conteudo-comportamento-exemplar wrap">
+              ainda não se obteve nenhum relato de compotamento inadequado :)
+            </p>
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
 
 
-      <!-- CARD RAIO-X SOCIOEMOCIONAL - GRÁFICO RADAR -->
-      <ion-card>
-        <ion-card-header class="center card-header">
-          <ion-title>
-            <div class="titulo-card rx-title">
+    <!-- CARD RAIO-X SOCIOEMOCIONAL - GRÁFICO RADAR -->
+    <ion-card>
+      <ion-card-header class="center card-header">
+        <ion-title>
+          <div class="titulo-card rx-title">
             RAIO-X SOCIOEMOCIONAL
           </div>
-          </ion-title>
-        </ion-card-header>
-      <ion-card-content class="container-graf-radar"width="1000" height="498">
+        </ion-title>
+      </ion-card-header>
+      <ion-card-content class="container-graf-radar" width="1000" height="498">
         <!-- GRÁFICO RADAR -->
         <canvas #radarCanvas class="card-radar-socioemo"></canvas>
-      </ion-card-content>       
-      </ion-card>
+      </ion-card-content>
+    </ion-card>
 
-        <!-- CARD CAMARADA -->
-      <ion-card>
-          <ion-card-header class="center card-header">
-            <ion-title>
-              <div class="titulo-card comportamento-title">
-              CAMARADA
-            </div>
-            </ion-title>
-          </ion-card-header>
-        <ion-card-content class="container-graf-radar"width="1000" height="498">
-          <!-- GRÁFICO DE LINHAS EVOLUÇÃO BIMESTRAL -->
-          <canvas #colaboracaoLinesCanvas class="card-radar-socioemo"></canvas>
-        </ion-card-content>       
-        </ion-card>
+    <!-- CARD CAMARADA -->
+    <ion-card>
+      <ion-card-header class="center card-header">
+        <ion-title>
+          <div class="titulo-card comportamento-title">
+            CAMARADA
+          </div>
+        </ion-title>
+      </ion-card-header>
+      <ion-card-content class="container-graf-radar" width="1000" height="498">
+        <!-- GRÁFICO DE LINHAS EVOLUÇÃO BIMESTRAL -->
+        <canvas #colaboracaoLinesCanvas class="card-radar-socioemo"></canvas>
+      </ion-card-content>
+    </ion-card>
 
-        <!-- CARD INCASÁVEL -->
-      <ion-card>
-          <ion-card-header class="center card-header">
-            <ion-title>
-              <div class="titulo-card comportamento-title">
-              INCANSÁVEL
-            </div>
-            </ion-title>
-          </ion-card-header>
-        <ion-card-content class="container-graf-radar"width="1000" height="498">
-          <!-- GRÁFICO DE LINHAS EVOLUÇÃO BIMESTRAL -->
-          <canvas #incansavelLinesCanvas class="card-radar-socioemo"></canvas>
-        </ion-card-content>       
-        </ion-card>
+    <!-- CARD INCASÁVEL -->
+    <ion-card>
+      <ion-card-header class="center card-header">
+        <ion-title>
+          <div class="titulo-card comportamento-title">
+            INCANSÁVEL
+          </div>
+        </ion-title>
+      </ion-card-header>
+      <ion-card-content class="container-graf-radar" width="1000" height="498">
+        <!-- GRÁFICO DE LINHAS EVOLUÇÃO BIMESTRAL -->
+        <canvas #incansavelLinesCanvas class="card-radar-socioemo"></canvas>
+      </ion-card-content>
+    </ion-card>
 
-        <!-- CARD LÍDER -->
-      <ion-card>
-          <ion-card-header class="center card-header">
-            <ion-title>
-              <div class="titulo-card comportamento-title">
-              LÍDER
-            </div>
-            </ion-title>
-          </ion-card-header>
-        <ion-card-content class="container-graf-radar"width="1000" height="498">
-          <!-- GRÁFICO DE LINHAS EVOLUÇÃO BIMESTRAL -->
-          <canvas #liderLinesCanvas class="card-radar-socioemo"></canvas>
-        </ion-card-content>       
-        </ion-card>
+    <!-- CARD LÍDER -->
+    <ion-card>
+      <ion-card-header class="center card-header">
+        <ion-title>
+          <div class="titulo-card comportamento-title">
+            LÍDER
+          </div>
+        </ion-title>
+      </ion-card-header>
+      <ion-card-content class="container-graf-radar" width="1000" height="498">
+        <!-- GRÁFICO DE LINHAS EVOLUÇÃO BIMESTRAL -->
+        <canvas #liderLinesCanvas class="card-radar-socioemo"></canvas>
+      </ion-card-content>
+    </ion-card>
 
-        <!-- CARD ORIGINAL -->
-      <ion-card>
-          <ion-card-header class="center card-header">
-            <ion-title>
-              <div class="titulo-card comportamento-title">
-              ORIGINAL
-            </div>
-            </ion-title>
-          </ion-card-header>
-        <ion-card-content class="container-graf-radar"width="1000" height="498">
-          <!-- GRÁFICO DE LINHAS EVOLUÇÃO BIMESTRAL -->
-          <canvas #originalLinesCanvas class="card-radar-socioemo"></canvas>
-        </ion-card-content>       
-        </ion-card>
+    <!-- CARD ORIGINAL -->
+    <ion-card>
+      <ion-card-header class="center card-header">
+        <ion-title>
+          <div class="titulo-card comportamento-title">
+            ORIGINAL
+          </div>
+        </ion-title>
+      </ion-card-header>
+      <ion-card-content class="container-graf-radar" width="1000" height="498">
+        <!-- GRÁFICO DE LINHAS EVOLUÇÃO BIMESTRAL -->
+        <canvas #originalLinesCanvas class="card-radar-socioemo"></canvas>
+      </ion-card-content>
+    </ion-card>
 
-        <!-- CARD ZEN -->
-      <ion-card>
-          <ion-card-header class="center card-header">
-            <ion-title>
-              <div class="titulo-card comportamento-title">
-              ZEN
-            </div>
-            </ion-title>
-          </ion-card-header>
-        <ion-card-content class="container-graf-radar"width="1000" height="498">
-          <!-- GRÁFICO DE LINHAS EVOLUÇÃO BIMESTRAL -->
-          <canvas #zenLinesCanvas class="card-radar-socioemo"></canvas>
-        </ion-card-content>       
-        </ion-card>
+    <!-- CARD ZEN -->
+    <ion-card>
+      <ion-card-header class="center card-header">
+        <ion-title>
+          <div class="titulo-card comportamento-title">
+            ZEN
+          </div>
+        </ion-title>
+      </ion-card-header>
+      <ion-card-content class="container-graf-radar" width="1000" height="498">
+        <!-- GRÁFICO DE LINHAS EVOLUÇÃO BIMESTRAL -->
+        <canvas #zenLinesCanvas class="card-radar-socioemo"></canvas>
+      </ion-card-content>
+    </ion-card>
 </ion-content>
