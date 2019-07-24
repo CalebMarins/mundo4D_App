@@ -52,7 +52,7 @@ export class HomePage implements OnInit {
       cssClass: 'secondary',
       message: '<img src ="/assets/comportamento/exemplar.png">' +
       '<div class="fonte-alert-comportamento">'+
-      '<p>Que bacana!</p>'+
+      '<p class="bold">Que bacana!</p>'+
       '<p> Esse(a) aluno(a) teve um comportamento <b class="amarelo">exemplar</b>'+
       ' e irá colecionar <b class="amarelo">+1</b>'+
       '<img src ="/assets/comportamento/exemplar.png" class="icone-comportamento-texto">'+
@@ -95,9 +95,9 @@ export class HomePage implements OnInit {
     const inadequado = await this.alert.create({
       mode: 'ios',
       header: 'INADEQUADO',
-      message: '<img src ="/assets/comportamento/inadequado.png" class="aa">' +
+      message: '<img src ="/assets/comportamento/inadequado.png">' +
         '<div class="fonte-alert-comportamento">' +
-        'Que pena!<br/>' +
+        '<p class="bold">Que pena!</p>' +
         '<p> Esse(a) aluno(a) teve um comportamento <b class="roxo">inadequado </b>' +
         'e irá acumular <b class="roxo">+1</b><img src ="/assets/comportamento/inadequado.png" class="icone-comportamento-texto"> </p> </div>',
       //iNPUTS DE DATA E DESCRIÇÃO
