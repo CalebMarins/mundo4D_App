@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-edit-perfil',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditPerfilPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private nav : NavController
+  ) { }
 
   ngOnInit() {
   }
 
+  voltar(){
+    this.nav.back();
+  }
 }

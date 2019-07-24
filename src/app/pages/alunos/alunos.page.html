@@ -1,6 +1,8 @@
 <ion-header>
   <ion-toolbar color="secondary" mode="ios" class="titulo-pages">
-    <ion-back-button slot="start"></ion-back-button>
+      <ion-button icon-only slot="start" class="profile-button" color="secondary" (click)="voltar()" mode="ios">
+        <ion-icon name="arrow-back" mode="ios"></ion-icon>
+      </ion-button>      
     <ion-title class="titulo-pages">Sala de aula</ion-title>
   </ion-toolbar>
 </ion-header>

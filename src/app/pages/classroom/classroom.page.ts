@@ -36,6 +36,11 @@ export class ClassroomPage implements OnInit {
     if(this.salaSubscription) this.salaSubscription.unsubscribe();
   }
 
+  //Voltar
+  voltar(){
+    this.navcrtrl.back();
+  }
+
   loadSala() {
     this.salaSubscription = this.salaService.getSala(this.salaId).subscribe(data => {
       this.sala = data;

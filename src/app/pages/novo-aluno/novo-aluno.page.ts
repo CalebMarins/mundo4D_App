@@ -36,6 +36,10 @@ export class NovoAlunoPage implements OnInit {
   ngOnInit() {
   }
 
+  voltar(){
+    this.navctrl.back();
+  }
+
   loadAluno(){
     this.alunoSubscription = this.alunoService.getAluno(this.alunoId).subscribe(data=>{
       this.aluno = data;

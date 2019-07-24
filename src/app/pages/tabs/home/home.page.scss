@@ -12,7 +12,7 @@
 }
 
 //BOTÃO DE DUVIDA
-.sla{
+.botao-duvida{
     display: block;
     margin-left: 90%;
     margin-right: auto;
@@ -27,13 +27,37 @@
     border-color: #FCB018;
 }
 
+//FORMATAÇÃO DOS BAGDETS DE COMPORTAMENTO 
+.pontua-comportamento{
+    position:absolute;
+    margin-left: 38px;
+    margin-top: -8px;
+    border-radius: 50%;
+    background: #F5BD2C;
+    border: 2px solid;
+    color: #332E38;
+    border-color: #332E38;
+    width: 28px;
+    height: 28px;
+}
+
+
 //FORMATAÇÃO DO NOME E SOBRENOMEC DO ALUNO
 .nome-aluno{
     color:#FCB018;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 550;
 }
 .sobrenome-aluno{
     color: #682189;
-    font-size: 15px;
+    font-size: 18px;
+}
+
+.inadequado-format{
+    margin-right: 8%;
+}
+
+.aa{
+width: 18px;
+height: 18px;
 }

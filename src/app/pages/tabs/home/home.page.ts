@@ -27,8 +27,8 @@ export class HomePage implements OnInit {
     });
   }
 
-  ionViewDidLoad(){
-   
+  ionViewDidLoad() {
+
   }
   ngOnInit() {
   }
@@ -47,8 +47,16 @@ export class HomePage implements OnInit {
   //ALERT DE COMPORTAMENTO EXEMPLAR
   async comportamentoExemplar() {
     const exemplar = await this.alert.create({
+      mode: 'ios',
       header: 'EXEMPLAR',
-      message: 'Que bacana! <p> Esse(a) aluno(a) teve um comportamento <b class="amarelo">exemplar</b> e irá colecionar <b class="amarelo">+1</b> coração!</p>',
+      cssClass: 'secondary',
+      message: '<img src ="/assets/comportamento/exemplar.png">' +
+      '<div class="fonte-alert-comportamento">'+
+      '<p>Que bacana!</p>'+
+      '<p> Esse(a) aluno(a) teve um comportamento <b class="amarelo">exemplar</b>'+
+      ' e irá colecionar <b class="amarelo">+1</b>'+
+      '<img src ="/assets/comportamento/exemplar.png" class="icone-comportamento-texto">'+
+      '</p></div>',
       //iNPUTS DE DATA E DESCRIÇÃO
       inputs: [
         {
@@ -62,9 +70,10 @@ export class HomePage implements OnInit {
           placeholder: 'Descreva brevemente a boa ação do(a) aluno(a)',
         }
       ],
-      //BUTTONS CONFIRMAR OU CANCELAR INADEQUADO
+      //BUTTONS CONFIRMAR OU CANCELAR EXEMPLAR
       buttons: [
         {
+          cssClass: 'color="secondary"',
           text: '+1',
           handler: () => {
 
@@ -84,8 +93,13 @@ export class HomePage implements OnInit {
 
   async comportamentoInadequado() {
     const inadequado = await this.alert.create({
+      mode: 'ios',
       header: 'INADEQUADO',
-      message: 'Que pena! <p> Esse(a) aluno(a) teve um comportamento <b class="roxo">inadequado</b> e irá acumular <b class="roxo">+1</b> inapropriado!</p>',
+      message: '<img src ="/assets/comportamento/inadequado.png" class="aa">' +
+        '<div class="fonte-alert-comportamento">' +
+        'Que pena!<br/>' +
+        '<p> Esse(a) aluno(a) teve um comportamento <b class="roxo">inadequado </b>' +
+        'e irá acumular <b class="roxo">+1</b><img src ="/assets/comportamento/inadequado.png" class="icone-comportamento-texto"> </p> </div>',
       //iNPUTS DE DATA E DESCRIÇÃO
       inputs: [
         {

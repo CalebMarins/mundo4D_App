@@ -1,6 +1,8 @@
 <ion-header>
   <ion-toolbar color="secondary" mode="ios" class="titulo-pages">
-    <ion-back-button slot="start"></ion-back-button>
+    <ion-button icon-only slot="start" class="profile-button" color="secondary" (click)="voltar()" mode="ios">
+      <ion-icon name="arrow-back" mode="ios"></ion-icon>
+    </ion-button>
     <ion-title class="titulo-pages">Aluno</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -17,7 +19,8 @@
   <p class="mg-top-30">
     <ion-label class="bold titulo-pages" color="primary">Digite aqui o sobrenome do aluno:</ion-label>
     <ion-item class="mg-top-15">
-      <ion-input type="text" [(ngModel)]="aluno.sobrenome" placeholder="Sobrenome do aluno" color="secondary"></ion-input>
+      <ion-input type="text" [(ngModel)]="aluno.sobrenome" placeholder="Sobrenome do aluno" color="secondary">
+      </ion-input>
     </ion-item>
   </p>
 

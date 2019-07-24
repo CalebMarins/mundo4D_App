@@ -29,11 +29,16 @@ export class PerfilPage implements OnInit {
 
   //Ir para salas
   salas(){
-    this.router.navigate(['master/tabs/recursos'])
+    this.router.navigate(['master/tabs/recursos']);
+  }
+  //Ir para alunos
+  alunos(){
+    this.router.navigate(['/alunos']);
   }
 
-  alunos(){
-    this.router.navigate(['/alunos'])
+  //Editar perfil
+  editarPerfil(){
+    this.router.navigate(['/edit-perfil']);
   }
   
   //Método de logout

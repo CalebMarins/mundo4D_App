@@ -15,7 +15,7 @@
 
   <ion-card class="atividade-title-card">
       <ion-buttons slot="end">
-          <ion-button (click)="duvidaAvaliacao()" class="sla">
+          <ion-button (click)="duvidaAvaliacao()" class="botao-duvida">
             <ion-icon name="help-circle-outline" color="primary"></ion-icon>
           </ion-button>
         </ion-buttons>
@@ -57,8 +57,8 @@
       <!-- Lista de alunos -->
     <ion-item *ngFor="let a of alunos" lines="nome" mode="md">
       <!-- BOTÃO COMPORTAMENTO EXEMPLAR -->
-      <ion-thumbnail slot="start" class="avatar">
-          <ion-badge color="primary">{{nE}}</ion-badge>
+      <ion-thumbnail slot="start" class="exemplar-format">
+          <ion-badge color="primary" class="pontua-comportamento" (click)=comportamentoExemplar()><p class="no-margin mg-top-3">{{nE}} </p></ion-badge>
         <img button src='/assets/comportamento/exemplar.png' (click)=comportamentoExemplar()>
       </ion-thumbnail>
       <ion-label class="center">
@@ -75,8 +75,8 @@
       </p>
       </ion-label>
       <!-- BOTÃO COMPORTAMENTO INADEQUADO -->
-    <ion-thumbnail slot="end" class="avatar" (click)="comportamentoInadequado()">
-        <ion-badge color="secondary">{{nI}}</ion-badge>
+    <ion-thumbnail class="inadequado-format" (click)="comportamentoInadequado()">
+        <ion-badge color="primary" color="secondary" class="pontua-comportamento" (click)="comportamentoInadequado()"><p class="no-margin mg-top-3">{{nI}}</p></ion-badge>
       <img button src='/assets/comportamento/inadequado.png'>
     </ion-thumbnail>
   </ion-item>

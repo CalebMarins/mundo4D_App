@@ -1,4 +1,4 @@
-import { ToastController, AlertController } from '@ionic/angular';
+import { ToastController, AlertController, NavController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Aluno } from 'src/app/interfaces/aluno';
@@ -16,7 +16,8 @@ export class AlunosPage implements OnInit {
   constructor(
     private alunoService : AlunoService,
     private toastC : ToastController,
-    private alert : AlertController
+    private alert : AlertController,
+    private nav : NavController
     ) {
     this.alunoSubscription = this.alunoService.getAlunos().subscribe(data=>{
       this.alunos = data;
@@ -29,6 +30,10 @@ export class AlunosPage implements OnInit {
 
   ngOnDestroy(){
     this.alunoSubscription.unsubscribe
+  }
+
+  voltar(){
+    this.nav.back();
   }
 
   async deleteAluno(id:string){

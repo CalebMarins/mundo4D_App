@@ -8,6 +8,7 @@ import {Storage} from '@ionic/storage';
 
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -28,7 +29,8 @@ export class LoginPage implements OnInit {
     private loadingController: LoadingController,
     private alertController: AlertController,
     private storage: Storage,
-  ) { }
+
+  ) {}
 
   
   ngOnInit() {

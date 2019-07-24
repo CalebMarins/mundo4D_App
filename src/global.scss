@@ -10,11 +10,11 @@
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
 //Importando fonte
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,300i,400,700&display=swap');
 
 //Definindo fonte como Global
 *{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 //Colors 
@@ -76,7 +76,7 @@ $snow:#EADECA;
 .mg-top-70{
     margin-top: 70px;
 }
-mg-top-50-percent{
+.mg-top-50-percent{
     margin-top: 50%;
 }
 
@@ -85,6 +85,11 @@ mg-top-50-percent{
 .no-padding{
     padding: 0px;
 }
+
+.padding-top-7-percent{
+    padding-top:7%;
+}
+
 .padding-top-10-percent{
     padding-top:10%;
 }
@@ -145,3 +150,16 @@ mg-top-50-percent{
     --color-focusable: #FCB018;
 }
 
+//FORMATAÇÃO ALERT
+
+//Tamanho da fonte
+.fonte-alert-comportamento{
+    font-size: 18px;
+}
+
+.icone-comportamento-texto{
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    margin-top: 2px;
+    }

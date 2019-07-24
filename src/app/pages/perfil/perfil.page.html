@@ -3,16 +3,16 @@
   <div class="fundo-lindo">
     <!-- BOTÃO VOLTAR -->
       <div class="div-back-button">
-         <ion-icon name="arrow-back" class="back-button" (click)="voltar()"></ion-icon>
+         <ion-icon name="arrow-back" class="back-button" mode="ios" (click)="voltar()"></ion-icon>
         </div>
         <!-- FOTO DE PERFIL -->
     <div>      
       <p class="foto-margin"></p>
-      <img class="foto-perfil" src="https://scontent.fcgh9-1.fna.fbcdn.net/v/t1.0-1/c0.0.160.160a/p160x160/12373219_786555211471043_3463090211446988892_n.jpg?_nc_cat=109&_nc_oc=AQkSjltacawEuCAB9KxkTP2hl_7ipjzXgtskQmcJ5Ssx1W5QKTQplHjx-bKpGp2akF8&_nc_ht=scontent.fcgh9-1.fna&oh=2c5f9b095faeba1fd1462e8a0188c137&oe=5DA12392">
+      <img class="foto-perfil" (click)="editarPerfil()" src="https://scontent.fcgh9-1.fna.fbcdn.net/v/t1.0-1/c0.0.160.160a/p160x160/12373219_786555211471043_3463090211446988892_n.jpg?_nc_cat=109&_nc_oc=AQkSjltacawEuCAB9KxkTP2hl_7ipjzXgtskQmcJ5Ssx1W5QKTQplHjx-bKpGp2akF8&_nc_ht=scontent.fcgh9-1.fna&oh=2c5f9b095faeba1fd1462e8a0188c137&oe=5DA12392">
     </div>
   </div>
   <!-- DADOS DO USUÁRIO -->
-  <div class="dados center">
+  <div class="dados center" (click)="editarPerfil()">
 
     <!-- NOME -->
     <ion-label color="secondary" class="bold nome-perfil">
@@ -26,6 +26,7 @@
     </ion-label>
   </p>
   </div>
+
   <!-- DIVIDER TOP -->
   <div class="divider mg-top-10">
   </div>
