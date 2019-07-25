@@ -12,7 +12,8 @@ const routes: Routes = [
   { path: 'novo-aluno', loadChildren: './pages/novo-aluno/novo-aluno.module#NovoAlunoPageModule', canActivate: [AuthGuard] },
   { path: 'novo-aluno/:id', loadChildren: './pages/novo-aluno/novo-aluno.module#NovoAlunoPageModule', canActivate: [AuthGuard] },
   {path: 'perfil', loadChildren: './pages/perfil/perfil.module#PerfilPageModule', canActivate: [AuthGuard] },
-  { path: 'edit-perfil', loadChildren: './pages/edit-perfil/edit-perfil.module#EditPerfilPageModule' }
+  { path: 'edit-perfil', loadChildren: './pages/edit-perfil/edit-perfil.module#EditPerfilPageModule' },  { path: 'salas', loadChildren: './pages/salas/salas.module#SalasPageModule' }
+
 
 
 

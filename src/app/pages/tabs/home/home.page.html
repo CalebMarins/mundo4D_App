@@ -1,22 +1,28 @@
 <!-- PÁGINA HOME -->
-<ion-header>
+<ion-header (click)="loadSala()">
     <ion-toolbar color="secondary"  mode ="ios">
         <ion-button icon-only slot="start" class="profile-button" color="secondary" routerLink="/perfil" mode="ios">
           <ion-icon name="person"></ion-icon>
         </ion-button>      
-      <ion-title class="center titulo-pages">Home</ion-title>
+      <ion-title class="center titulo-pages" >{{sala.nomeSala}}</ion-title>
     </ion-toolbar>
   </ion-header>
 
 <ion-content padding>
   <ion-label class="titulo-pages bold" color="primary"> Bom dia Prof!</ion-label>
+  <div class="mg-top-10">
+  <ion-label class="titulo-pages light">
+    {{dataHoje}}
+  </ion-label>
+</div>
+
 
   <!-- AQUI VEM A DATA DO DIA DE HOJE -->
 
   <ion-card class="atividade-title-card">
       <ion-buttons slot="end">
           <ion-button (click)="duvidaAvaliacao()" class="botao-duvida">
-            <ion-icon name="help-circle-outline" color="primary"></ion-icon>
+            <ion-icon name="help-circle-outline" class="icone-duvida" color="primary"></ion-icon>
           </ion-button>
         </ion-buttons>
     <ion-card-header>
@@ -57,7 +63,7 @@
       <!-- Lista de alunos -->
     <ion-item *ngFor="let a of alunos" lines="nome" mode="md">
       <!-- BOTÃO COMPORTAMENTO EXEMPLAR -->
-      <ion-thumbnail slot="start" class="exemplar-format">
+      <ion-thumbnail slot="start">
           <ion-badge color="primary" class="pontua-comportamento" (click)=comportamentoExemplar()><p class="no-margin mg-top-3">{{nE}} </p></ion-badge>
         <img button src='/assets/comportamento/exemplar.png' (click)=comportamentoExemplar()>
       </ion-thumbnail>
@@ -75,7 +81,7 @@
       </p>
       </ion-label>
       <!-- BOTÃO COMPORTAMENTO INADEQUADO -->
-    <ion-thumbnail class="inadequado-format" (click)="comportamentoInadequado()">
+    <ion-thumbnail (click)="comportamentoInadequado()">
         <ion-badge color="primary" color="secondary" class="pontua-comportamento" (click)="comportamentoInadequado()"><p class="no-margin mg-top-3">{{nI}}</p></ion-badge>
       <img button src='/assets/comportamento/inadequado.png'>
     </ion-thumbnail>

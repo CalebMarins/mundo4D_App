@@ -1,0 +1,61 @@
+<!-- PÁGINA DE RECURSOS -->
+<ion-header>
+    <ion-toolbar color="secondary"  mode ="ios">
+        <ion-button icon-only slot="start" class="profile-button" color="secondary" routerLink="/perfil" mode="ios">
+          <ion-icon name="person"></ion-icon>
+        </ion-button>      
+      <ion-title class="center titulo-pages">Suas turmas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+  <!-- LISTA -->
+  <!-- Caso não tenha nenhuma sala salva -->
+  <div *ngIf="!salas.length">
+    <img class="format-nada-img" src= '/assets/nada/nothing-roxo.png'/>
+    <div class="center roxo text-nada">
+      Você ainda não tem nenhuma turma criada! :( 
+    </div>
+  </div>
+
+  <!-- Caso tenha salas salvas -->
+  <ion-list>
+    <ion-item-sliding *ngFor="let s of salas" class="sla">
+      <!-- Arrastar paa o lado para editar -->
+      <ion-item-options side="start">
+          <ion-item-option color="tertiary" [routerLink]="['/classroom', s.id]">
+            EDITAR
+          </ion-item-option>
+        </ion-item-options>
+
+        <!-- Item sala de aula -->
+        <ion-item button [routerLink]="['/master/tabs/home', s.id]" lines="none">      
+        <ion-card class="card-formata">
+          <img [src]="s.picture" class="imagem-card-sala">
+        <ion-card-content>
+          <h5 class="titulo-sala center">
+          {{s.nomeSala}}
+        </h5>
+          <p class="subtitulo-sala center">
+            {{s.nomeColegio}}
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+
+      <!-- Arrastar para o lado para excluir -->
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="deleteSala(s.id)">
+          Excluir
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <!-- Adicionar outra Sala -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/classroom">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

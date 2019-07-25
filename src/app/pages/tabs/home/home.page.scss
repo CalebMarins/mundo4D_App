@@ -13,9 +13,18 @@
 
 //BOTÃO DE DUVIDA
 .botao-duvida{
+    position: absolute;
     display: block;
     margin-left: 90%;
     margin-right: auto;
+    margin-top:33px;
+
+
+}
+
+.icone-duvida{
+    width: 20px;
+    height: 20px;
 }
 
 //FORMATAÇÃO DA IMAGEM DE PERFIL DOS ALUNOS - POSICIONANDO NO CENTRO
@@ -45,14 +54,10 @@
 //FORMATAÇÃO DO NOME E SOBRENOMEC DO ALUNO
 .nome-aluno{
     color:#FCB018;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 550;
 }
 .sobrenome-aluno{
     color: #682189;
     font-size: 18px;
-}
-
-.inadequado-format{
-    margin-right: 8%;
 }

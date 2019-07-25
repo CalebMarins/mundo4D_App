@@ -17,6 +17,7 @@ const routes: Routes = [
       { path: 'recursos', loadChildren: '../recursos/recursos.module#RecursosPageModule' },
       { path: 'recursos/:id', loadChildren: '../recursos/recursos.module#RecursosPageModule' },
       { path: 'home', loadChildren: '../home/home.module#HomePageModule'},
+      { path: 'home/:id', loadChildren: '../home/home.module#HomePageModule'},
       
     ]
   },{

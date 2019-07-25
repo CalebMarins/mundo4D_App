@@ -67,7 +67,7 @@ export class ClassroomPage implements OnInit {
       try {
         await this.salaService.updateSala(this.salaId, this.sala);
         this.loading.dismiss();
-        this.navcrtrl.navigateBack('master/tabs/recursos');
+        this.navcrtrl.navigateBack('salas');
         this.mostrarToast('Sala atualizada com sucesso!');
       } catch (error) {
         this.loading.dismiss();
@@ -81,7 +81,7 @@ export class ClassroomPage implements OnInit {
       try {
         await this.salaService.addSala(this.sala);
         this.loading.dismiss();
-        this.navcrtrl.navigateBack('master/tabs/recursos');
+        this.navcrtrl.navigateBack('/salas');
         this.mostrarToast('Sala criada com sucesso!');
       } catch (error) {
         this.loading.dismiss();

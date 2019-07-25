@@ -118,7 +118,7 @@ export class LoginPage implements OnInit {
             this.storage.set('usuario', data)
               .then(() => {
                 load.dismiss();
-                this.router.navigate(['master'])
+                this.router.navigate(['salas'])
               })
 
           })

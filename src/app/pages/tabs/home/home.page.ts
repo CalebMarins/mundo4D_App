@@ -1,9 +1,14 @@
+import { PerfilService } from './../../../services/perfil.service';
 
 import { AlertController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { Aluno } from 'src/app/interfaces/aluno';
 import { Subscription } from 'rxjs';
 import { AlunoService } from 'src/app/services/aluno.service';
+import { ActivatedRoute } from '@angular/router';
+import { Salas } from 'src/app/interfaces/salas';
+import { SalasService } from 'src/app/services/salas.service';
+import { Perfil } from 'src/app/interfaces/perfil';
 
 
 @Component({
@@ -13,15 +18,44 @@ import { AlunoService } from 'src/app/services/aluno.service';
 })
 export class HomePage implements OnInit {
 
+  //Para trazer dados dos alunos
   private alunos = new Array<Aluno>();
   private alunoSubscription: Subscription;
+
+  //Para trazer dados do perfil
+  private perfil: Perfil = {};
+  private perfilSubscription : Subscription;
+  private perfilId: string = null;
+
+
+  //Para trazer dados da Sala logada
+  private sala: Salas = {};
+  private salaSubscription: Subscription;
+  private salaId: string = null;
+  sla;
+  dataHoje;
   nE = 0;
   nI = 0;
 
   constructor(
+    private activatedRoute: ActivatedRoute,
     private alunoService: AlunoService,
-    private alert: AlertController
+    private alert: AlertController,
+    private salaService: SalasService,
+    private perfilService : PerfilService
   ) {
+    // Perfil
+    this.perfilId = this.activatedRoute.snapshot.params['uid'];
+    if (this.perfilId) this.loadPerfil();
+
+    //Sala
+    this.salaId = this.activatedRoute.snapshot.params['id'];
+    if (this.salaId) this.loadSala();
+
+    // Data
+    this.getDataHoje();
+
+    // Alunos
     this.alunoSubscription = this.alunoService.getAlunos().subscribe(data => {
       this.alunos = data
     });
@@ -33,11 +67,36 @@ export class HomePage implements OnInit {
   ngOnInit() {
   }
 
+  loadPerfil(){
+    this.perfilService.perfilLogado;
+    this.sla = this.perfilService.perfilLogado;
+  }
+
+  loadSala() {
+    this.salaSubscription = this.salaService.getSala(this.salaId).subscribe(data => {
+      this.sala = data;
+    });
+  }
+
+  //Implemaentação da data de hoje
+  getDataHoje(){
+    var dataObj = new Date();
+    var ano = dataObj.getFullYear().toString();
+    var mes = dataObj.getMonth().toString();
+    var dia = dataObj.getDate().toString();
+
+    var mesArray = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+    this.dataHoje = dia + ' de ' + mesArray[mes] + ' de ' + ano;
+  }
+
   //ALERT DE DÚVIDA AVALIÇÕES MENSAIS
   async duvidaAvaliacao() {
     const duvida = await this.alert.create({
       header: 'Avalie sua turma regularmente!',
-      message: 'Trabalhar e avaliar os aspectos sociemocionais dos alunos regularmente é essencial para a evolução da turma! <p class="center"> Nossa recomendação é:<br> <b class="roxo">02</b> avaliações de cada pilar socioemocional por mês </p> <p>Para avaliar uma turma vá à sessão avaliar no menu inferior!</p>',
+      message: 'Trabalhar e avaliar os aspectos sociemocionais dos alunos regularmente é '+
+      'essencial para a evolução da turma! <p class="center"> Nossa recomendação é:<br> <b class="roxo">02</b>'+
+      ' avaliações de cada pilar socioemocional por mês </p>'+
+      '<p>Para avaliar uma turma vá à sessão avaliar no menu inferior!</p>',
 
       buttons: ['ENTENDI!']
     });

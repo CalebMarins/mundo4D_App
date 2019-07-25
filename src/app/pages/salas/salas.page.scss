@@ -1,0 +1,37 @@
+//Formatação da imagem quando ainda não se tem salas
+.format-nada-img{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50%;
+}
+
+//Formatação do texto quando não se tem nada
+.text-nada{
+    font-size: 20px;
+}
+
+//Nome da sala
+.titulo-sala{
+    color:#FCB018;
+    font-size: 25px;
+    font-weight: 550;
+}
+
+//Nome do colégio
+.subtitulo-sala{
+    color: #682189;
+    font-size: 20px;
+}
+
+//Frmatando card
+.card-formata{
+    width:100%;
+}
+
+//Formatando imagem no card
+.imagem-card-sala{
+    height: 200px;
+    width: 100%;
+}
