@@ -20,7 +20,12 @@ export class HomePage implements OnInit {
 
   //Para trazer dados dos alunos
   private alunos = new Array<Aluno>();
+  private alunosSubscription: Subscription;
+
+  //Para trazer informações do aluno selecionado 
+  private aluno: Aluno = {};
   private alunoSubscription: Subscription;
+  private alunoId: string = null;
 
   //Para trazer dados do perfil
   private perfil: Perfil = {};
@@ -55,8 +60,12 @@ export class HomePage implements OnInit {
     // Data
     this.getDataHoje();
 
+    //Aluno
+    this.alunoId = this.activatedRoute.snapshot.params['id'];
+    if(this.alunoId) this.loadAluno();
+
     // Alunos
-    this.alunoSubscription = this.alunoService.getAlunos().subscribe(data => {
+    this.alunosSubscription = this.alunoService.getAlunos().subscribe(data => {
       this.alunos = data
     });
   }
@@ -67,15 +76,23 @@ export class HomePage implements OnInit {
   ngOnInit() {
   }
 
+  //Puxando dados de perfil no firebase
   loadPerfil(){
     this.perfilService.perfilLogado;
     this.sla = this.perfilService.perfilLogado;
   }
 
+  //Puxando dados da sala do firebase
   loadSala() {
     this.salaSubscription = this.salaService.getSala(this.salaId).subscribe(data => {
       this.sala = data;
     });
+  }
+
+  loadAluno(){
+    this.alunoSubscription = this.alunoService.getAluno(this.alunoId).subscribe(value=>{
+      this.aluno = value;
+    })
   }
 
   //Implemaentação da data de hoje
@@ -136,7 +153,7 @@ export class HomePage implements OnInit {
           text: '+1',
           handler: () => {
 
-            this.nE++;
+            this.aluno.exemplar;
           }
         },
         {

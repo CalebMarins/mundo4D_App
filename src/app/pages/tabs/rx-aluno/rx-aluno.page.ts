@@ -1,6 +1,10 @@
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {Chart} from 'chart.js';
+import { Aluno } from 'src/app/interfaces/aluno';
+import { Subscription } from 'rxjs';
+import { AlunoService } from 'src/app/services/aluno.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -10,9 +14,9 @@ import {Chart} from 'chart.js';
 })
 export class RxAlunoPage implements OnInit {
 
-  // //Amostragem de telas, caso tenha alunos selecionados, ou não
-  // nothing = true;
-  // conteudo = false;
+  private aluno: Aluno = {};
+  private alunoSubscription: Subscription;
+  private alunoId: string = null;
 
   // NOMEANDO GRÁFICO RADAR SOCIOEMOCIONAL
   @ViewChild ('radarCanvas') radarCanvas;
@@ -27,10 +31,22 @@ export class RxAlunoPage implements OnInit {
   lineChart : any;
 
   constructor(
-   private fs : AngularFirestore 
-  ) { }
+   private fs : AngularFirestore,
+   private alunoService: AlunoService,
+   private activatedRoute: ActivatedRoute,
+  ) { 
+    this.alunoId = this.activatedRoute.snapshot.params['id'];
+    if (this.alunoId) this.loadSala();
+
+  }
 
   ngOnInit(){
+  }
+
+  loadSala() {
+    this.alunoSubscription = this.alunoService.getAluno(this.alunoId).subscribe(data => {
+      this.aluno = data;
+    });
   }
 
   ngAfterViewInit() {

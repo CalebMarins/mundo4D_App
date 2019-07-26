@@ -42,7 +42,6 @@ export class AlunoService {
    updateALuno(id:string, aluno : Aluno){
     return this.alunosCollection.doc<Aluno>(id).update(aluno);
    }
-
    //Deletar aluno
    deleteAluno(id : string){
     return this.alunosCollection.doc(id).delete();

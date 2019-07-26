@@ -41,7 +41,7 @@
       </ion-item-options>
 
       <!-- Item sala de aula -->
-    <ion-item button [routerLink]="'/master/tabs/rx-aluno'">
+    <ion-item button [routerLink]="['/master/tabs/rx-aluno', a.id]">
       <ion-avatar slot="start" class="avatar">
         <img [src]="a.picture">
       </ion-avatar>

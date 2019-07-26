@@ -14,6 +14,7 @@ const routes: Routes = [
     children: [
       { path: 'avaliar', loadChildren: '../avaliar/avaliar.module#AvaliarPageModule' },
       { path: 'rx-aluno', loadChildren: '../rx-aluno/rx-aluno.module#RxAlunoPageModule' },
+      { path: 'rx-aluno/:id', loadChildren: '../rx-aluno/rx-aluno.module#RxAlunoPageModule' },
       { path: 'recursos', loadChildren: '../recursos/recursos.module#RecursosPageModule' },
       { path: 'recursos/:id', loadChildren: '../recursos/recursos.module#RecursosPageModule' },
       { path: 'home', loadChildren: '../home/home.module#HomePageModule'},
