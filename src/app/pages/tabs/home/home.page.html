@@ -4,7 +4,7 @@
     <ion-button icon-only slot="start" class="profile-button" color="secondary" routerLink="/perfil" mode="ios">
       <ion-icon name="person"></ion-icon>
     </ion-button>
-
+    <!-- EXIBINDO NOME DA SALA NO HEADER -->
     <ion-button icon-only slot="end" class="profile-button" color="secondary" routerLink="/salas" mode="ios">
       <ion-icon name="easel"></ion-icon>
     </ion-button>
@@ -12,6 +12,7 @@
   </ion-toolbar>
 </ion-header>
 
+<!-- EXIBINDO DATA DE HOJE -->
 <ion-content padding>
   <ion-label class="titulo-pages bold" color="primary"> Bom dia Prof!</ion-label>
   <div class="mg-top-10">
@@ -21,8 +22,7 @@
   </div>
 
 
-  <!-- AQUI VEM A DATA DO DIA DE HOJE -->
-
+  <!-- CARD DE ATIVIDADES REALIZADAS -->
   <ion-card class="atividade-title-card">
     <ion-buttons slot="end">
       <ion-button (click)="duvidaAvaliacao()" class="botao-duvida">
@@ -30,11 +30,9 @@
       </ion-button>
     </ion-buttons>
     <ion-card-header>
-
       <ion-card-title>
         <div class="formatacao-atividade-title-card">
           ATIVIDADES REALIZADAS
-
         </div>
       </ion-card-title>
     </ion-card-header>
@@ -76,13 +74,15 @@
       <ion-label class="center">
         <!-- IMAGEM DE PERFIL DO ALUNO -->
         <ion-avatar class="avatar-alunos">
-          <img [src]="a.picture">
+            <h5 class="letra-pesquisa" [routerLink]="['/master/tabs/rx-aluno', a.id]">
+              {{a.pesquisa}}
+            </h5>
         </ion-avatar>
         <!-- NOME DO ALUNO -->
-        <h5 class="nome-aluno">
+        <h5 class="nome-aluno" [routerLink]="['/master/tabs/rx-aluno', a.id]">
           {{a.nome}}
         </h5>
-        <p class="sobrenome-aluno">
+        <p class="sobrenome-aluno" [routerLink]="['/master/tabs/rx-aluno', a.id]">
           {{a.sobrenome}}
         </p>
       </ion-label>
@@ -95,5 +95,4 @@
       </ion-thumbnail>
     </ion-item>
   </ion-list>
-
 </ion-content>

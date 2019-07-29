@@ -11,23 +11,37 @@
 <ion-content padding>
   <!-- PRIMEIRO NOME DO ALUNO -->
   <ion-label class="bold titulo-pages" color="primary">Digite aqui o nome do aluno:</ion-label>
-  <ion-item class="mg-top-15">
+  <ion-item class="mg-top-10">
     <ion-input type="text" [(ngModel)]="aluno.nome" placeholder="Nome do aluno" color="secondary"></ion-input>
   </ion-item>
 
   <!-- SOBRENOME DO ALUNO -->
-  <p class="mg-top-30">
+  <p class="mg-top-25">
     <ion-label class="bold titulo-pages" color="primary">Digite aqui o sobrenome do aluno:</ion-label>
-    <ion-item class="mg-top-15">
+    <ion-item class="mg-top-10">
       <ion-input type="text" [(ngModel)]="aluno.sobrenome" placeholder="Sobrenome do aluno" color="secondary">
       </ion-input>
     </ion-item>
   </p>
 
+  <!-- INICIAL DO ALUNO -->
+  <p class="mg-top-25">
+    <ion-label class="bold titulo-pages" color="primary">Digite aqui a inicial do aluno:</ion-label>
+    <ion-item class="mg-top-10">
+      <ion-input type="text" [(ngModel)]="aluno.pesquisa" placeholder="Inicial do aluno" color="secondary">
+      </ion-input>
+      <ion-buttons slot="end">
+        <ion-button (click)="duvidaInicial()">
+          <ion-icon name="help-circle" color="primary"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </p>
+
   <!-- LINK DE IMAGEM DO ALUNO -->
-  <p class="mg-top-30">
+  <p class="mg-top-25">
     <ion-label class="bold titulo-pages" color="primary">Insira aqui o link de imagem:</ion-label>
-    <ion-item class="mg-top-15">
+    <ion-item class="mg-top-10">
       <ion-input type="text" [(ngModel)]="aluno.picture" placeholder="Foto da do(a) aluno(a)" color="secondary">
       </ion-input>
       <ion-buttons slot="end">
@@ -39,7 +53,7 @@
   </p>
 
   <!-- BOTÃO DE SALVAR -->
-  <div class="padding-left-right-20 mg-top-40">
+  <div class="padding-left-right-20 mg-top-30">
     <div class="btn-salvar center" (click)="salvarAluno()">
       <ion-icon name="save"></ion-icon>
       SALVAR ALTERAÇÕES

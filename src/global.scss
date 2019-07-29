@@ -18,9 +18,10 @@
 }
 
 //Colors 
-$roxo: #682189;
+$roxo: #72069B;
 $amarelo: #FCB018;
 $verde: #5EC3AE;
+$cinza: #332E38;
 $dark: #1F2945;
 $snow:#EADECA;
 
@@ -34,6 +35,9 @@ $snow:#EADECA;
 
 .verde{
     color: $verde;
+}
+.cinza{
+    color: $cinza;
 }
 
 .dark{
@@ -66,6 +70,9 @@ $snow:#EADECA;
 }
 .mg-top-20{
     margin-top: 20px;
+}
+.mg-top-25{
+    margin-top: 25px;
 }
 .mg-top-30{
     margin-top: 30px;

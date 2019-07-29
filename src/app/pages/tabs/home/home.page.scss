@@ -32,8 +32,9 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    border: 2px solid;
-    border-color: #FCB018;
+    background: #d6d6d698;
+    border: 1px solid;
+    border-color: #d6d6d698;
 }
 
 //FORMATAÇÃO DOS BAGDETS DE COMPORTAMENTO 
@@ -52,12 +53,18 @@
 
 
 //FORMATAÇÃO DO NOME E SOBRENOMEC DO ALUNO
+.letra-pesquisa{
+    float:left; text-align:center; padding:10px 0 10px 19px;
+    color:#72069B;
+    font-size: 30px;
+    font-weight: 550;
+}
 .nome-aluno{
-    color:#FCB018;
-    font-size: 20px;
+    color:#72069B;
+    font-size: 19px;
     font-weight: 550;
 }
 .sobrenome-aluno{
-    color: #682189;
-    font-size: 18px;
+    color: #332E38;
+    font-size: 15px;
 }

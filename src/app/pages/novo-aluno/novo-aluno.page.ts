@@ -57,7 +57,7 @@ export class NovoAlunoPage implements OnInit {
         await this.alunoService.updateALuno(this.alunoId, this.aluno);
         this.loading.dismiss();
         this.navctrl.navigateBack('/alunos');
-        this.mostrarToast('Aluno(a) atualizado(a) com sucesso!');
+        this.mostrarToast('<b class="roxo">'+this.aluno.nome+'</b> atualizado(a) com sucesso!');
       } catch (error) {
         this.loading.dismiss();
         this.mostrarToast('Erro ao tentar editar o(a) aluno(a)');
@@ -69,7 +69,7 @@ export class NovoAlunoPage implements OnInit {
         await this.alunoService.addAluno(this.aluno);
         this.loading.dismiss();
         this.navctrl.navigateBack('/alunos');
-        this.mostrarToast('Aluno(a) criado(a) com sucesso!');
+        this.mostrarToast('<b class="roxo">'+this.aluno.nome+'</b> criado(a) com sucesso!');
       } catch (error) {
         this.loading.dismiss();
         this.mostrarToast('Erro ao tentar criar aluno(a)');
@@ -94,6 +94,20 @@ export class NovoAlunoPage implements OnInit {
     });
     toast.present();
   }
+
+  //ALERT DE DÚVIDA DE INICIAL
+  async duvidaInicial(){
+    const duvida = await this.alert.create({
+      header: 'Coloque aqui a inicial do aluno',
+      message: 'Coloque <b class="roxo">M</b> para <b class="roxo">Maria</b>, <b class="roxo">J</b> para <b class="roxo">João Pedro</b> e por aí vai... <b class="roxo">:)</b></p>',
+
+      buttons: ['OK']
+    });
+    duvida.present();
+  }
+
+
+
   //ALERT DE DÚVIDA LINK DE FOTO
   async duvidaFoto() {
     const duvida = await this.alert.create({

@@ -14,4 +14,5 @@ export interface Aluno {
     explicaInadequado?:string;
     userId?:string;
     salaId?:string;
+    pesquisa?:string;
 }

@@ -5,31 +5,21 @@
       <ion-icon name="person"></ion-icon>
     </ion-button>
     <ion-button icon-only slot="end" class="profile-button" color="secondary" routerLink="/alunos" mode="ios">
-      <ion-icon name="more"></ion-icon>
+      <ion-icon name="search"></ion-icon>
     </ion-button>
     <ion-title class="center titulo-pages">RX Aluno</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <!-- <ion-searchbar animated (ionInput)="search()" [(ngModel)]="queryText"></ion-searchbar>
-    <ion-item *ngFor="let aluno of resultArr">
-      
-        <ion-avatar>
-          <img src="{{aluno.picture}}">
-        </ion-avatar>
-        <ion-label>
-        <ion-note>
-          {{aluno.nome}}
-        </ion-note>
-      </ion-label>
-    </ion-item> -->
-
-  <!-- NOME DO ALUNO -->
-  <ion-label class="bold titulo-pages" color="primary"> {{aluno.nome}}</ion-label>
-  <br>
-  <ion-label class=" light sobrenome" color="secondary">{{aluno.sobrenome}}</ion-label>
-
+    <!-- DADOS DO ALUNO -->
+    <div class="center">
+      <!-- NOME DO ALUNO -->
+      <ion-label class="bold nome-aluno" color="primary"> {{aluno.nome}}</ion-label>
+    <br>
+    <!-- SOBRENOMEDO ALUNO -->
+    <ion-label class=" light sobrenome-aluno" color="secondary">{{aluno.sobrenome}}</ion-label>
+  </div>
   <!-- CARD COMPORTAMENTAL -->
   <ion-card class="mg-top-20">
     <ion-card-header class="center card-header">
