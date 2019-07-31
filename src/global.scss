@@ -56,8 +56,11 @@ $snow:#EADECA;
 .no-margin{
     margin:0px;
 }
+.mg-top--2{
+    margin-top:-2px
+}
 .mg-top-3{
-    margin:3px
+    margin-top:3px
 }
 .mg-top-5{
     margin-top: 5px;
@@ -91,6 +94,12 @@ $snow:#EADECA;
 //Padding
 .no-padding{
     padding: 0px;
+}
+
+.no-padding-top-bottom{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
 }
 
 .padding-top-7-percent{
@@ -168,6 +177,5 @@ $snow:#EADECA;
 .icone-comportamento-texto{
     width: 18px;
     height: 18px;
-    position: absolute;
     margin-top: 2px;
 }

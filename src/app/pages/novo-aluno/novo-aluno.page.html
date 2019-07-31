@@ -16,7 +16,7 @@
   </ion-item>
 
   <!-- SOBRENOME DO ALUNO -->
-  <p class="mg-top-25">
+  <p class="mg-top-20">
     <ion-label class="bold titulo-pages" color="primary">Digite aqui o sobrenome do aluno:</ion-label>
     <ion-item class="mg-top-10">
       <ion-input type="text" [(ngModel)]="aluno.sobrenome" placeholder="Sobrenome do aluno" color="secondary">
@@ -25,7 +25,7 @@
   </p>
 
   <!-- INICIAL DO ALUNO -->
-  <p class="mg-top-25">
+  <p class="mg-top-20">
     <ion-label class="bold titulo-pages" color="primary">Digite aqui a inicial do aluno:</ion-label>
     <ion-item class="mg-top-10">
       <ion-input type="text" [(ngModel)]="aluno.pesquisa" placeholder="Inicial do aluno" color="secondary">
@@ -37,26 +37,27 @@
       </ion-buttons>
     </ion-item>
   </p>
-
-  <!-- LINK DE IMAGEM DO ALUNO -->
-  <p class="mg-top-25">
-    <ion-label class="bold titulo-pages" color="primary">Insira aqui o link de imagem:</ion-label>
+  <!-- UPLOAD DE IMAGEM DO ALUNO -->
+  <p class="mg-top-20">
+    <ion-label class="bold titulo-pages" color="primary">Escolha uma foto do(a) aluno(a)</ion-label>
     <ion-item class="mg-top-10">
-      <ion-input type="text" [(ngModel)]="aluno.picture" placeholder="Foto da do(a) aluno(a)" color="secondary">
-      </ion-input>
+      <ion-label color="primary">Progresso do Upload: {{uploadPercent | async}}</ion-label>
       <ion-buttons slot="end">
-        <ion-button (click)="duvidaFoto()">
-          <ion-icon name="help-circle" color="primary"></ion-icon>
+        <ion-button (click)="abrirGaleria()">
+          <ion-icon name="document" color="primary"></ion-icon>
         </ion-button>
       </ion-buttons>
     </ion-item>
+    <ion-input type="url" [(ngModel)]="aluno.picture" color="secondary">{{downloadUrl | async}}</ion-input>
   </p>
-
+  
   <!-- BOTÃO DE SALVAR -->
-  <div class="padding-left-right-20 mg-top-30">
+  <div class="padding-left-right-20 mg-top-20">
     <div class="btn-salvar center" (click)="salvarAluno()">
       <ion-icon name="save"></ion-icon>
       SALVAR ALTERAÇÕES
     </div>
   </div>
+  <!-- IMAGEM UPLOADADA E QUE ESTÁ NO STORAGE -->
+  <img class="mg-top-20" [src]="downloadUrl | async"  *ngIf="downloadUrl | async">
 </ion-content>

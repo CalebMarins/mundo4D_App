@@ -27,6 +27,9 @@ export class AvaliarPage implements OnInit {
   tuto=false;
   aluninho = false;
 
+  duvidaTuto = true;
+  voltarTuto = false;
+
   private alunos = new Array<Aluno>();
   private alunoSubscription : Subscription;
 
@@ -109,10 +112,14 @@ export class AvaliarPage implements OnInit {
   }
   expandirAvaliarTuto(){
     this.tuto = true;
+    this.duvidaTuto = false;
+    this.voltarTuto = true;
   }
 
   retrairAvaliarTuto(){
     this.tuto= false;
+    this.duvidaTuto = true;
+    this.voltarTuto = false;
   }
 
   //Indo pra perfil page

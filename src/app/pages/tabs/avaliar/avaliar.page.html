@@ -1,12 +1,12 @@
 <!-- PÁGINA DE AVALIAÇÃO -->
 <ion-header>
-    <ion-toolbar color="secondary"  mode ="ios">
-        <ion-button icon-only slot="start" class="profile-button" color="secondary" (click)="perfil()" mode="ios">
-          <ion-icon name="person"></ion-icon>
-        </ion-button>      
-      <ion-title class="center titulo-pages">Avaliar</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-toolbar color="secondary" mode="ios">
+    <ion-button icon-only slot="start" class="profile-button" color="secondary" (click)="perfil()" mode="ios">
+      <ion-icon name="person"></ion-icon>
+    </ion-button>
+    <ion-title class="center titulo-pages">Avaliar</ion-title>
+  </ion-toolbar>
+</ion-header>
 
 <!-- CONTEUDO -->
 <ion-content padding>
@@ -97,10 +97,15 @@
   <!-- EXPANDIR CAMARADA -->
   <div *ngIf="camarada">
     <ion-item class="roxo" lines="none">
-      <!-- BOTAO DE expand -->
       <ion-buttons slot="end">
-        <ion-button (click)="expandirAvaliarTuto()">
+        <!-- BOTAO DE expand -->
+        <ion-button *ngIf="duvidaTuto" (click)="expandirAvaliarTuto()">
           <ion-icon name="help"></ion-icon>
+        </ion-button>
+
+        <!-- BOTÃO RETRAIR -->
+        <ion-button *ngIf="voltarTuto" (click)="retrairAvaliarTuto()">
+          <ion-icon name="arrow-dropup"></ion-icon>
         </ion-button>
       </ion-buttons>
       <ion-thumbnail class="thumb">
@@ -118,12 +123,17 @@
   <!-- EXPANDIR INCANSÁVEL -->
   <div *ngIf="incansavel">
     <ion-item class="roxo" lines="none">
-      <!-- BOTAO DE expand -->
-      <ion-buttons slot="end">
-        <ion-button (click)="expandirAvaliarTuto()">
-          <ion-icon name="help"></ion-icon>
-        </ion-button>
-      </ion-buttons>
+        <ion-buttons slot="end">
+            <!-- BOTAO DE expand -->
+            <ion-button *ngIf="duvidaTuto" (click)="expandirAvaliarTuto()">
+              <ion-icon name="help"></ion-icon>
+            </ion-button>
+    
+            <!-- BOTÃO RETRAIR -->
+            <ion-button *ngIf="voltarTuto" (click)="retrairAvaliarTuto()">
+              <ion-icon name="arrow-dropup"></ion-icon>
+            </ion-button>
+          </ion-buttons>
       <ion-thumbnail class="thumb">
         <img src='/assets/socioemocional/incansavel.png' class="image-thumb">
       </ion-thumbnail>
@@ -139,12 +149,17 @@
   <!-- EXPANDIR LÍDER -->
   <div *ngIf="lider">
     <ion-item class="roxo" lines="none">
-      <!-- BOTAO DE expand -->
-      <ion-buttons slot="end">
-        <ion-button (click)="expandirAvaliarTuto()">
-          <ion-icon name="help"></ion-icon>
-        </ion-button>
-      </ion-buttons>
+        <ion-buttons slot="end">
+            <!-- BOTAO DE expand -->
+            <ion-button *ngIf="duvidaTuto" (click)="expandirAvaliarTuto()">
+              <ion-icon name="help"></ion-icon>
+            </ion-button>
+    
+            <!-- BOTÃO RETRAIR -->
+            <ion-button *ngIf="voltarTuto" (click)="retrairAvaliarTuto()">
+              <ion-icon name="arrow-dropup"></ion-icon>
+            </ion-button>
+          </ion-buttons>
       <ion-thumbnail class="thumb">
         <img src='/assets/socioemocional/lider.png' class="image-thumb">
       </ion-thumbnail>
@@ -160,10 +175,15 @@
   <!-- EXPANDIR ORIGINAL -->
   <div *ngIf="original">
     <ion-item class="roxo" lines="none">
-      <!-- BOTAO DE expand -->
       <ion-buttons slot="end">
-        <ion-button (click)="expandirAvaliarTuto()">
+        <!-- BOTAO DE expand -->
+        <ion-button *ngIf="duvidaTuto" (click)="expandirAvaliarTuto()">
           <ion-icon name="help"></ion-icon>
+        </ion-button>
+
+        <!-- BOTÃO RETRAIR -->
+        <ion-button *ngIf="voltarTuto" (click)="retrairAvaliarTuto()">
+          <ion-icon name="arrow-dropup"></ion-icon>
         </ion-button>
       </ion-buttons>
       <ion-thumbnail class="thumb">
@@ -181,12 +201,17 @@
   <!-- EXPANDIR ZEN -->
   <div *ngIf="zen">
     <ion-item class="roxo" lines="none">
-      <!-- BOTAO DE expand -->
       <ion-buttons slot="end">
-        <ion-button (click)="expandirAvaliarTuto()">
-          <ion-icon name="help"></ion-icon>
-        </ion-button>
-      </ion-buttons>
+          <!-- BOTAO DE expand -->
+          <ion-button *ngIf="duvidaTuto" (click)="expandirAvaliarTuto()">
+            <ion-icon name="help"></ion-icon>
+          </ion-button>
+  
+          <!-- BOTÃO RETRAIR -->
+          <ion-button *ngIf="voltarTuto" (click)="retrairAvaliarTuto()">
+            <ion-icon name="arrow-dropup"></ion-icon>
+          </ion-button>
+        </ion-buttons>
       <ion-thumbnail class="thumb">
         <img src='/assets/socioemocional/zen.png' class="image-thumb">
       </ion-thumbnail>
@@ -292,16 +317,16 @@
       </ion-item>
     </ion-list>
     <div class="padding-left-right-20 mg-top-40">
-        <div class="btn-salvar-avaliacao center">
-      <ion-icon name="clipboard"></ion-icon>
-          SALVAR AVALIAÇÃO
+      <div class="btn-salvar-avaliacao center">
+        <ion-icon name="clipboard"></ion-icon>
+        SALVAR AVALIAÇÃO
       </div>
-      </div>
+    </div>
   </div>
 
 
   <!-- AINDA NÃO TEM NADA -->
-  <div *ngIf="nothing" class="mg-top-30">
+  <div *ngIf="nothing" class="mg-top-3">
     <img src='/assets/nada/nothing-roxo.png' class="nothing-img">
     <h3 class="nothing-texto center">
       Ainda não há nenhum <b class="roxo">pilar de avaliação</b> selecionado!

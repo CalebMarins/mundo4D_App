@@ -26,7 +26,7 @@
   <ion-card class="atividade-title-card">
     <ion-buttons slot="end">
       <ion-button (click)="duvidaAvaliacao()" class="botao-duvida">
-        <ion-icon name="help-circle-outline" class="icone-duvida" color="primary"></ion-icon>
+        <ion-icon name="help-circle-outline" (click)="duvidaAvaliacao()" class="icone-duvida" color="primary"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-card-header>
@@ -36,12 +36,51 @@
         </div>
       </ion-card-title>
     </ion-card-header>
+    <!-- ATIVIDADES REALIZADAS -->
+    <ion-card-content class="no-margin">
+      <p class="light cinza mes-card-atividade">mês</p>
+
+      <!-- ABERTURA AO NOVO -->
+      <p class="cinza font-card-avaliacao light">Abertura ao Novo
+        <ion-label class="cinza font-card-avaliacao contador-avaliacao"><b class="roxo n-avaliacao">0</b> / 2
+        </ion-label>
+      </p>
+    </ion-card-content>
+
+    <!-- CAPACIDADE DE REALIZAÇÃO -->
     <ion-card-content>
+      <p class="cinza font-card-avaliacao light">Capacida de Realização
+        <ion-label class="cinza font-card-avaliacao contador-avaliacao"><b class="roxo n-avaliacao">0</b> / 2
+        </ion-label>
+      </p>
+    </ion-card-content>
+
+    <!-- COLABORAÇÃO -->
+    <ion-card-content>
+      <p class="cinza font-card-avaliacao light">Colaboração
+        <ion-label class="cinza font-card-avaliacao contador-avaliacao"><b class="roxo n-avaliacao">0</b> / 2
+        </ion-label>
+      </p>
+    </ion-card-content>
+
+    <!-- ESTABILIDADE EMOCIONAL -->
+    <ion-card-content>
+      <p class="cinza font-card-avaliacao light">Estabilidade emocional
+        <ion-label class="cinza font-card-avaliacao contador-avaliacao"><b class="roxo n-avaliacao">0</b> / 2
+        </ion-label>
+      </p>
+    </ion-card-content>
+
+    <!-- EXTROVERSÃO -->
+    <ion-card-content>
+      <p class="cinza font-card-avaliacao light">Extroversão
+        <ion-label class="cinza font-card-avaliacao contador-avaliacao"><b class="roxo n-avaliacao">0</b> / 2
+        </ion-label>
+      </p>
     </ion-card-content>
   </ion-card>
   <!-- LISTA -->
-  <ion-label class="bold titulo-pages" color="primary">Sua turma</ion-label>
-
+  <ion-label class="bold titulo-pages" color="primary">Registrar comportamentos</ion-label>
   <!-- Caso não tenha nenhuma alunos salvos na sala -->
   <ion-list *ngIf="!alunos.length">
     <ion-item *ngFor="let item of [0, 1, 2, 3, 4]">
@@ -61,6 +100,20 @@
   </ion-list>
 
   <!-- Caso tenha salas alunos -->
+  <div class="padding-left-right-20 mg-top-10" (click)="verFotoAluno()" *ngIf="inicial">
+    <div class="btn-ver-foto center">
+      <ion-icon name="happy" class="icon-btn-inicial-foto mg-top--2"></ion-icon>
+      VER FOTO DOS ALUNOS
+    </div>
+  </div>
+
+  <div class="padding-left-right-20 mg-top-10" (click)="verInicialAluno()" *ngIf="picture">
+    <div class="btn-ver-inicial center">
+      <ion-icon name="return-left" class="icon-btn-inicial-foto"></ion-icon>
+      VER INICIAIS DOS ALUNOS
+    </div>
+  </div>
+  <!-- MODO LETRA INICIAL -->
   <ion-list lines="full">
     <!-- Lista de alunos -->
     <ion-item *ngFor="let a of alunos" lines="nome" mode="md">
@@ -74,9 +127,11 @@
       <ion-label class="center">
         <!-- IMAGEM DE PERFIL DO ALUNO -->
         <ion-avatar class="avatar-alunos">
-            <h5 class="letra-pesquisa" [routerLink]="['/master/tabs/rx-aluno', a.id]">
-              {{a.pesquisa}}
-            </h5>
+          <h5 class="letra-pesquisa" [routerLink]="['/master/tabs/rx-aluno', a.id]" *ngIf="inicial">
+            {{a.pesquisa}}
+          </h5>
+          <img [src]="a.picture" [routerLink]="['/master/tabs/rx-aluno', a.id]" *ngIf="picture">
+
         </ion-avatar>
         <!-- NOME DO ALUNO -->
         <h5 class="nome-aluno" [routerLink]="['/master/tabs/rx-aluno', a.id]">
@@ -95,4 +150,7 @@
       </ion-thumbnail>
     </ion-item>
   </ion-list>
+
+
+
 </ion-content>

@@ -18,13 +18,59 @@
     margin-left: 90%;
     margin-right: auto;
     margin-top:33px;
-
-
 }
 
+//ÍCONE NO BOTÃO DÚVIDA
 .icone-duvida{
     width: 20px;
     height: 20px;
+}
+
+//FONTE GERAL NO CONTENT DO CARD DE AVALIAÇÃO
+.font-card-avaliacao{
+    font-size:17px;
+}
+
+// A PALAVRA MÊS NO CANTO SUPERIOR DIREITO DO CARD
+.mes-card-atividade{
+    text-align: end;
+}
+
+// CONTADOR NO CARD AVALIAÇÃO
+.contador-avaliacao{
+    float: right;
+}
+
+//NÚMERO DE AVALIAÇÕES APLCADAS
+.n-avaliacao{
+    font-size:20px;
+    font-weight:700;
+}
+
+//Ver foto/inicial
+.btn-ver-inicial{
+    padding: 10px;
+    background: #d6d6d698;
+    border-radius: 5px;
+    color: #FCB018;
+    font-weight: 550;
+    border: 2px solid;
+    border-color: #FCB018;
+}
+
+.btn-ver-foto{
+    padding: 10px;
+    background: #d6d6d698;
+    border-radius: 5px;
+    color: #72069B;
+    font-weight: 550;
+    border: 2px solid;
+    border-color: #72069B;
+}
+.icon-btn-inicial-foto{
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
 }
 
 //FORMATAÇÃO DA IMAGEM DE PERFIL DOS ALUNOS - POSICIONANDO NO CENTRO
@@ -51,19 +97,21 @@
     height: 28px;
 }
 
-
-//FORMATAÇÃO DO NOME E SOBRENOMEC DO ALUNO
+//FORMATAÇÃO DOS DADOS DO ALUNO
+//Inicial
 .letra-pesquisa{
-    float:left; text-align:center; padding:10px 0 10px 19px;
+    float:left; text-align:center; padding:8px 0 10px 20px;
     color:#72069B;
     font-size: 30px;
     font-weight: 550;
 }
+//Nome
 .nome-aluno{
     color:#72069B;
     font-size: 19px;
     font-weight: 550;
 }
+//Sobrenome
 .sobrenome-aluno{
     color: #332E38;
     font-size: 15px;

@@ -3,6 +3,6 @@ export const firebaseConfig = {
     authDomain: "mundo4d-app.firebaseapp.com",
     databaseURL: "https://mundo4d-app.firebaseio.com",
     projectId: "mundo4d-app",
-    storageBucket: "",
+    storageBucket: "mundo4d-app.appspot.com",
     messagingSenderId: "637618507858",
   };

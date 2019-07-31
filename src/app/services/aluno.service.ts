@@ -45,8 +45,5 @@ export class AlunoService {
    //Deletar aluno
    deleteAluno(id : string){
     return this.alunosCollection.doc(id).delete();
-   }
-
-
-    
+   }    
 }

@@ -2,7 +2,7 @@
 <widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Mundo 4D</name>
     <description>O aplicativo de auxílio socioemocional focado pra educação tecnológica</description>
-    <author email="hi@ionicframework.com" href="http://ionicframework.com/">Caleb Marins</author>
+    <author email="caleb.marins@gmail.com" href="http://ionicframework.com/">Caleb Marins</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />

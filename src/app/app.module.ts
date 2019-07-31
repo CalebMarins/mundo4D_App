@@ -19,9 +19,13 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 //Providers
 import {AuthProvider} from '../providers/auth'
 import {FirebaseProvider} from '../providers/data'
+import { Camera } from '@ionic-native/camera/ngx';
 
 //Plugins
 import { IonicStorageModule } from '@ionic/storage';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { File } from '@ionic-native/file/ngx';
+
 
 
 @NgModule({
@@ -34,13 +38,16 @@ import { IonicStorageModule } from '@ionic/storage';
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    AngularFireStorageModule
   ],
   providers: [
     AuthProvider, 
     FirebaseProvider,
     StatusBar,
     SplashScreen,
+    Camera,
+    File,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

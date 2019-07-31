@@ -43,6 +43,10 @@ export class RxAlunoPage implements OnInit {
   ngOnInit(){
   }
 
+  ngOnDestroy(){
+    this.alunoSubscription.unsubscribe();
+  }
+
   loadSala() {
     this.alunoSubscription = this.alunoService.getAluno(this.alunoId).subscribe(data => {
       this.aluno = data;

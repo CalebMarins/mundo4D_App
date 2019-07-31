@@ -37,10 +37,19 @@ export class HomePage implements OnInit {
   private sala: Salas = {};
   private salaSubscription: Subscription;
   private salaId: string = null;
-  sla;
+
+  //Data de hoje
   dataHoje;
+
+  //Númeors de comportamento exemplar e inadequado, respectivamente
   nE = 0;
   nI = 0;
+
+  // Visualização da inicial ou foto
+  inicial = true;
+  picture = false;
+
+  
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -76,10 +85,13 @@ export class HomePage implements OnInit {
   ngOnInit() {
   }
 
+  ngOnDestroy(){
+    this.alunoSubscription.unsubscribe();
+  }
+
   //Puxando dados de perfil no firebase
   loadPerfil(){
     this.perfilService.perfilLogado;
-    this.sla = this.perfilService.perfilLogado;
   }
 
   //Puxando dados da sala do firebase
@@ -106,6 +118,8 @@ export class HomePage implements OnInit {
     this.dataHoje = dia + ' de ' + mesArray[mes] + ' de ' + ano;
   }
 
+
+
   //ALERT DE DÚVIDA AVALIÇÕES MENSAIS
   async duvidaAvaliacao() {
     const duvida = await this.alert.create({
@@ -118,6 +132,15 @@ export class HomePage implements OnInit {
       buttons: ['ENTENDI!']
     });
     duvida.present();
+  }
+
+  verFotoAluno(){
+    this.inicial = false;
+    this.picture = true;
+  }
+  verInicialAluno(){
+    this.picture = false;
+    this.inicial = true;
   }
 
   //ALERT DE COMPORTAMENTO EXEMPLAR
@@ -167,6 +190,7 @@ export class HomePage implements OnInit {
     exemplar.present();
   }
 
+  //COMPORTAMENTO INADEQUADO
   async comportamentoInadequado() {
     const inadequado = await this.alert.create({
       mode: 'ios',
