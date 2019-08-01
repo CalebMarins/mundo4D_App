@@ -1,14 +1,29 @@
 <ion-header>
-  <ion-toolbar color="secondary" mode="ios" class="titulo-pages">
-      <ion-button icon-only slot="start" class="profile-button" color="secondary" (click)="voltar()" mode="ios">
-        <ion-icon name="arrow-back" mode="ios"></ion-icon>
-      </ion-button>      
-    <ion-title class="titulo-pages">Sala de aula</ion-title>
+  <!-- BOTÃO VOLTAR -->
+  <ion-toolbar color="light" mode="ios" class="titulo-pages">
+      <ion-button icon-only slot="start" color="light" (click)="voltar()" mode="ios">
+        <ion-icon name="arrow-back" color="secondary" mode="ios"></ion-icon>
+      </ion-button>
+
+      <!-- BOTÃO ALTERAR PARA FOTO -->
+      <ion-button icon-only slot="end" color="light" (click)="verFotoAluno()" *ngIf="inicial" mode="ios">
+          <ion-icon name="happy" color="secondary" mode="ios"></ion-icon>
+      </ion-button>
+
+      <!-- BOTÃO ALTERAR PARA INICIAL -->
+      <ion-button slot="end" color="light" (click)="verInicialAluno()" *ngIf="picture" mode="ios">
+          <p class="roxo bold titulo-pages">@</p>
+      </ion-button>
+    <ion-title class="titulo-pages roxo">Sala de aula</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
   <ion-searchbar animated (ionInput)="search($event)" mode="ios"></ion-searchbar>
+
   <ion-item-sliding *ngFor="let res of resultArr">
       <!-- Arrastar para o lado para editar -->
       <ion-item-options side="start">
@@ -16,7 +31,6 @@
             EDITAR
           </ion-item-option>
         </ion-item-options>
-  
         <!-- Item sala de aula -->
       <ion-item button [routerLink]="['/master/tabs/rx-aluno', res.id]">
         <ion-avatar slot="start" class="avatar">
@@ -72,16 +86,20 @@
       <!-- Item sala de aula -->
     <ion-item button [routerLink]="['/master/tabs/rx-aluno', a.id]">
       <ion-avatar slot="start" class="avatar">
-        <img [src]="a.picture">
+          <h5 class="letra-pesquisa" *ngIf="inicial">
+            {{a.pesquisa}}
+          </h5>
+          <img [src]="a.picture" *ngIf="picture">
       </ion-avatar>
       <ion-label>
-        <h5 class="nome-aluno">
+        <h5 class="nome-aluno separa-imagem-dados">
         {{a.nome}}
       </h5>
-        <p class="sobrenome-aluno">
+        <p class="sobrenome-aluno separa-imagem-dados">
           {{a.sobrenome}}
         </p>
-      </ion-label>
+        <ion-note class="separa-imagem-dados">Arraste para os lados</ion-note>
+     </ion-label>
     </ion-item>
 
     <!-- Arrastar para o lado para excluir -->

@@ -8,26 +8,66 @@
     color: #fafafa;
 }
 
+//FORMATAÇÃO PARA O BOTÃO DE VER INICIAL (DESIGN)
+.btn-ver-inicial{
+    padding: 10px;
+    background: #d6d6d698;
+    border-radius: 5px;
+    color: #FCB018;
+    font-weight: 550;
+    border: 2px solid;
+    border-color: #FCB018;
+}
+
+//FORMATAÇÃO PARA O BOTÃO DE VER FOTO (DESIGN)
+.btn-ver-foto{
+    padding: 10px;
+    background: #d6d6d698;
+    border-radius: 5px;
+    color: #72069B;
+    font-weight: 550;
+    border: 2px solid;
+    border-color: #72069B;
+}
+
+//FORMATAÇÃO DE TAMANNHO E POSICIONAMENTO DO ÍCONE NO BOTÃO DE INICIAL - FOTO
+.icon-btn-inicial-foto{
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+//Foto
+.avatar{
+    width: 65px;
+    height: 65px;
+    margin:0 auto;  
+    background: #d6d6d698;
+    border: 1px solid;
+    border-color: #d6d6d698
+}
+
+//Inicial
+.letra-pesquisa{
+    float:left; text-align:center; padding:0 10px 20px 20px;
+    color:#72069B;
+    font-size: 30px;
+    font-weight: 550;
+}
+
+//Nome
 .nome-aluno{
     color:#FCB018;
-    font-size: 18px;
+    font-size: 21px;
     font-weight: 550;
 }
 
 //Subtítulo da Thumb
 .sobrenome-aluno{
     color: #682189;
-    font-size: 15px;
+    font-size: 16px;
 }
 
-.nome-aluno{
-    color:#FCB018;
-    font-size: 18px;
-    font-weight: 550;
-}
-
-//Subtítulo da Thumb
-.sobrenome-aluno{
-    color: #682189;
-    font-size: 15px;
+.separa-imagem-dados{
+    margin-left:20px;
 }

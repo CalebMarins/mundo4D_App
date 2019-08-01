@@ -122,10 +122,6 @@ export class AvaliarPage implements OnInit {
     this.voltarTuto = false;
   }
 
-  //Indo pra perfil page
-  perfil(){
-    this.router.navigate(['perfil']);
-  }
 
   
 

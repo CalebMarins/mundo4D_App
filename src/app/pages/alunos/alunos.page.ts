@@ -14,7 +14,12 @@ export class AlunosPage implements OnInit {
   todosAlunos = true;
   private alunos = new Array<Aluno>();
   private alunoSubscription : Subscription;
+  
+    // Visualização da inicial ou foto
+    inicial = true;
+    picture = false;
 
+  //Aarraysx relativos à searchBar
   private alunosArr = [];
   private resultArr=[];
 
@@ -29,6 +34,15 @@ export class AlunosPage implements OnInit {
       this.alunos = data;
     });
    }
+
+   doRefresh(event) {
+    console.log('Begin async operation');
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
+  }
 
   ngOnInit() {
     
@@ -72,6 +86,15 @@ export class AlunosPage implements OnInit {
         }
       })
     }
+  }
+
+  verFotoAluno(){
+    this.inicial = false;
+    this.picture = true;
+  }
+  verInicialAluno(){
+    this.picture = false;
+    this.inicial = true;
   }
 
   async deleteAluno(id:string){

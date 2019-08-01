@@ -36,6 +36,12 @@
     text-align: end;
 }
 
+//FORMATAÇÃO DO TAMANHO ÍCONE NO CARD DE ATIVIDADES REALIZADAS
+.icon-avalia{
+    width:25px;
+    height:25px;
+}
+
 // CONTADOR NO CARD AVALIAÇÃO
 .contador-avaliacao{
     float: right;
@@ -47,7 +53,7 @@
     font-weight:700;
 }
 
-//Ver foto/inicial
+//FORMATAÇÃO PARA O BOTÃO DE VER INICIAL (DESIGN)
 .btn-ver-inicial{
     padding: 10px;
     background: #d6d6d698;
@@ -58,6 +64,7 @@
     border-color: #FCB018;
 }
 
+//FORMATAÇÃO PARA O BOTÃO DE VER FOTO (DESIGN)
 .btn-ver-foto{
     padding: 10px;
     background: #d6d6d698;
@@ -67,17 +74,17 @@
     border: 2px solid;
     border-color: #72069B;
 }
+
+//FORMATAÇÃO DE TAMANNHO E POSICIONAMENTO DO ÍCONE NO BOTÃO DE INICIAL - FOTO
 .icon-btn-inicial-foto{
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     vertical-align: middle;
 }
 
 //FORMATAÇÃO DA IMAGEM DE PERFIL DOS ALUNOS - POSICIONANDO NO CENTRO
 .avatar-alunos{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin:0 auto;  
     background: #d6d6d698;
     border: 1px solid;
     border-color: #d6d6d698;

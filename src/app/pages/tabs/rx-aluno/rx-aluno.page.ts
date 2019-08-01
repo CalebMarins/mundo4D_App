@@ -42,9 +42,14 @@ export class RxAlunoPage implements OnInit {
 
   ngOnInit(){
   }
+  
+  doRefresh(event) {
+    console.log('Begin async operation');
 
-  ngOnDestroy(){
-    this.alunoSubscription.unsubscribe();
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
   }
 
   loadSala() {

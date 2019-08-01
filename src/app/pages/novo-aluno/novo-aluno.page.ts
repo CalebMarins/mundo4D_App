@@ -86,7 +86,6 @@ export class NovoAlunoPage implements OnInit {
       const buffer : ArrayBuffer = await this.arquivo.readAsArrayBuffer(path, file);
       const blob : Blob = new Blob([buffer], {type:'image.jpg'});
       this.uploadPicture(blob, file);
-      this.aluno.picture = this.downloadUrl.toString();
     }
 
     catch(error){
