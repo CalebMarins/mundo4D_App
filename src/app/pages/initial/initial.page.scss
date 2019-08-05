@@ -94,113 +94,55 @@
     83.98% { -webkit-transform: matrix3d(1.2, 0, 0, 0, 0, 1.2, 0, 0, 0, 0, 1, 0, 0, 0.001, 0, 1); transform: matrix3d(1.2, 0, 0, 0, 0, 1.2, 0, 0, 0, 0, 1, 0, 0, 0.001, 0, 1); }
     100% { -webkit-transform: matrix3d(1.2, 0, 0, 0, 0, 1.2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.2, 0, 0, 0, 0, 1.2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } 
   }
-  
-// PAGE LOGIN
-//Imagem
-    .fundo-login{
-        width: 100%;
-        height: 100%;
-        max-height: fit-content;
-        background: rgba(252,176,24,1);
-        background: -moz-linear-gradient(top, rgba(252,176,24,1) 0%, rgba(252,176,24,1) 8%, rgba(113,6,155,1) 85%, rgba(113,6,155,1) 100%);
-        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(252,176,24,1)), color-stop(8%, rgba(252,176,24,1)), color-stop(85%, rgba(113,6,155,1)), color-stop(100%, rgba(113,6,155,1)));
-        background: -webkit-linear-gradient(top, rgba(252,176,24,1) 0%, rgba(252,176,24,1) 8%, rgba(113,6,155,1) 85%, rgba(113,6,155,1) 100%);
-        background: -o-linear-gradient(top, rgba(252,176,24,1) 0%, rgba(252,176,24,1) 8%, rgba(113,6,155,1) 85%, rgba(113,6,155,1) 100%);
-        background: -ms-linear-gradient(top, rgba(252,176,24,1) 0%, rgba(252,176,24,1) 8%, rgba(113,6,155,1) 85%, rgba(113,6,155,1) 100%);
-        background: linear-gradient(to bottom, rgba(252,176,24,1) 0%, rgba(252,176,24,1) 8%, rgba(113,6,155,1) 85%, rgba(113,6,155,1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcb018', endColorstr='#71069b', GradientType=0 );
-    }
-    
-//Overlay
-    .overlay{
-        width:100%;
-        height: 100%;
-        background: linear-gradient(to top, #682189, #682189c4, #68218971, #68218941)
-    }
 
-//Logo Bolinha
-    .logo-bolinha{
-        width:30%;
-    }
 
-//Segmetação
-    .separacao{
-        left:0;
-        right:0;
-        width:90%;
-        margin: 0 auto;
-        top:5%;
-        z-index: 2;
-        color: #5EC3AE;
-    } 
-      //Slides de login/Cadastro
-ion-slides{
-    height: 100%;
-
-    //Container de dados
-    // .container-dados{
-    // width: 90%;
-    // color: #fff;
-    // background-color: #773f917e;
-    // border-radius: 3px;
-    // }     
-}
-
-    // .container-dados-esqueceu{
-    //     width: 100%;
-    //     color: #fff;
-    //     background-color: #773f917e;
-    //     border-radius: 3px;
-    //     }   
-
-//Tamanho da letra
-    .titulo{
-        font-size: 130%;
-    }
-    ion-item{
-        --background: transparent;
-        --border-radius: 3px;
-    }
+  //INITIAL PAGE 
+  //Background 
+  .wallpaper{
+      height:100%;
+      width:100%;
+      background-image:url(../../../assets/wallpapers/login4.jpeg);
+      background-size: cover;
+  }
+  .color-degrade{
+      height: 100%;
+      width:100%;
+      background: rgba(252,176,24,1);
+      background: -moz-linear-gradient(top, rgba(252,176,24,1) 0%, rgba(252,176,24,1) 8%, rgba(113,6,155,1) 85%, rgba(113,6,155,1) 100%);
+      background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(252,176,24,1)), color-stop(8%, rgba(252,176,24,1)), color-stop(85%, rgba(113,6,155,1)), color-stop(100%, rgba(113,6,155,1)));
+      background: -webkit-linear-gradient(top, rgba(252,176,24,1) 0%, rgba(252,176,24,1) 8%, rgba(113,6,155,1) 85%, rgba(113,6,155,1) 100%);
+      background: -o-linear-gradient(top, rgba(252,176,24,1) 0%, rgba(252,176,24,1) 8%, rgba(113,6,155,1) 85%, rgba(113,6,155,1) 100%);
+      background: -ms-linear-gradient(top, rgba(252,176,24,1) 0%, rgba(252,176,24,1) 8%, rgba(113,6,155,1) 85%, rgba(113,6,155,1) 100%);
+      background: linear-gradient(to bottom, rgba(252,176,24,1) 0%, rgba(252,176,24,1) 8%, rgba(113,6,155,1) 85%, rgba(113,6,155,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcb018', endColorstr='#71069b', GradientType=0 );
       
+          }
+      //Overlay
+          .overlay{
+              width:100%;
+              height: 100%;
+              background: linear-gradient(to top, #682189, #682189c4, #68218971, #68218941)
+          }
 
-//Button Login
-.btn-login{
+  //Logo Bolinha
+  .logo-bolinha{
+    width:40%;
+}
+
+//Formatação de todos os botões dessa página
+.btn-initial{
     color: rgb(38, 5, 51);
     padding: 10px;
     font-size: 20px;
     border-radius: 100px;
+}
+
+//Formatação da cor do btn de redirecionamento ao Login
+.btn-goto-login-color{
     background: #FCB018;
 }
 
-//Button esqueceu senha
-.esqueceu{
-    text-align: right;
-    font-size: 13px;
-}
-
-
-//Button Cadastro
-.btn-cadastro{
-    color: rgb(38, 5, 51);
-    padding: 10px;
-    font-size: 20px;
-    border-radius: 100px;
+//Formatação da cor do btn de redirecionamento ao Cadastro
+.btn-goto-cadastro-color{
     background: #5EC3AE;
 }
-
-//Formatação do botão voltar no esqueceu a senha
-.btn-esqueceu-voltar{
-    color: rgb(38, 5, 51);
-    padding: 10px;
-    border-radius: 100px;
-    background: #5EC3AE;
-}
-
-//Formatação do botão confirmar no esqueceu a senha
-.btn-esqueceu-confirmar{
-    color: rgb(38, 5, 51);
-    padding: 10px;
-    border-radius: 100px;
-    background: #FCB018;
-}
-

@@ -18,9 +18,9 @@ export class LoginPage implements OnInit {
   @ViewChild(IonSlides) slides : IonSlides;
 
   //Divisão de telas
-  splash= true;
-  login= true;
-  esqueceu= false;
+  splash = true;
+  login = true;
+  esqueceu = false;
 
   constructor(
     private router: Router,
@@ -38,7 +38,8 @@ export class LoginPage implements OnInit {
     setTimeout(()=>{
       this.splash = false;
     }, 4000);
-  } 
+  }
+
   // Definindo evento de clique no segmento
   segmentChanged(event : any){
     if (event.detail.value ==="login"){

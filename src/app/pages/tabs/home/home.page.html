@@ -13,8 +13,9 @@
 </ion-header>
 
 <!-- EXIBINDO DATA DE HOJE -->
-<ion-content padding>
-  <ion-label class="titulo-pages bold" color="primary"> Bom dia Prof!</ion-label>
+<ion-content>
+  <div padding>
+  <ion-label class="titulo-pages bold" color="secondary"> Bom dia Prof!</ion-label>
   <div class="mg-top-10">
     <ion-label class="titulo-pages light">
       {{dataHoje}}
@@ -90,10 +91,14 @@
       </p>
     </ion-card-content>
   </ion-card>
+  </div>
 
 
   <!-- LISTA -->
-  <ion-label class="bold titulo-pages" color="primary">Registrar comportamentos</ion-label>
+  <div class="registrar-backgroung padding-left-right-10">
+    <ion-label class="bold titulo-pages cinza">Registrar comportamentos:</ion-label>
+  </div>
+  <div padding>
   <!-- Caso não tenha nenhuma alunos salvos na sala -->
   <ion-list *ngIf="!alunos.length">
     <ion-item *ngFor="let item of [0, 1, 2, 3, 4]">
@@ -133,14 +138,14 @@
     <ion-item *ngFor="let a of alunos" lines="full"   mode="md">
       <!-- BOTÃO COMPORTAMENTO EXEMPLAR -->
       <ion-thumbnail slot="start">
-        <ion-badge color="primary" class="pontua-comportamento" (click)=comportamentoExemplar()>
+        <ion-badge color="primary" class="pontua-comportamento" (click)=comportamentoExemplar() *ngIf="exemplarBadge">
           <p class="no-margin mg-top-3">{{nE}} </p>
         </ion-badge>
         <img button src='/assets/comportamento/exemplar.png' (click)=comportamentoExemplar()>
       </ion-thumbnail>
 
       <ion-thumbnail (click)="comportamentoInadequado()" slot="end">
-          <ion-badge color="primary" color="secondary" class="pontua-comportamento" (click)="comportamentoInadequado()">
+          <ion-badge color="primary" color="secondary" class="pontua-comportamento" (click)="comportamentoInadequado()" *ngIf="inadequadoBadge">
             <p class="no-margin mg-top-3">{{nI}}</p>
           </ion-badge>
           <img button src='/assets/comportamento/inadequado.png'>
@@ -167,7 +172,5 @@
       
     </ion-item>
   </ion-list>
-
-
-
+</div>
 </ion-content>

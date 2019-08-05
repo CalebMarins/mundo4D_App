@@ -49,6 +49,10 @@ export class HomePage implements OnInit {
   inicial = true;
   picture = false;
 
+  //Visualização ou não dos badges se forem 0 ou não
+  exemplarBadge= false;
+  inadequadoBadge = false;
+
   
 
   constructor(
@@ -77,6 +81,22 @@ export class HomePage implements OnInit {
     this.alunosSubscription = this.alunoService.getAlunos().subscribe(data => {
       this.alunos = data
     });
+
+     //Mostrando badge de comportamento exemplar
+  if(this.nE!=0){
+    this.exemplarBadge = true;
+  }else{
+    this.exemplarBadge = false;
+  }
+
+  //Mostrando badge de comportamento inadequado
+  if(this.nI != 0){
+    this.inadequadoBadge = true;
+  }else{
+    this.inadequadoBadge = false;
+  }
+
+  
   }
 
   ionViewDidLoad() {
@@ -152,7 +172,7 @@ export class HomePage implements OnInit {
       message: '<img src ="/assets/comportamento/exemplar.png">' +
       '<div class="fonte-alert-comportamento">'+
       '<p class="bold">Que bacana!</p>'+
-      '<b class="roxo">'+this.aluno.nome+'</b> teve um comportamento <b class="amarelo">exemplar</b>'+
+      'Esse(a) aluno(a) teve um comportamento <b class="amarelo">exemplar</b>'+
       ' e irá colecionar <b class="amarelo">+1</b>'+
       '<img src ="/assets/comportamento/exemplar.png" class="icone-comportamento-texto">'+
       '</p></div>',
@@ -172,16 +192,17 @@ export class HomePage implements OnInit {
       //BUTTONS CONFIRMAR OU CANCELAR EXEMPLAR
       buttons: [
         {
+          text: 'Cancelar',
+          handler: () => {
+          }
+        },
+        {
           cssClass: 'color="secondary"',
           text: '+1',
           handler: () => {
 
-            this.aluno.exemplar;
-          }
-        },
-        {
-          text: 'Cancelar',
-          handler: () => {
+            this.nE++;
+            this.exemplarBadge = true;
           }
         }
       ]
@@ -189,6 +210,8 @@ export class HomePage implements OnInit {
     });
     exemplar.present();
   }
+
+ 
 
   //COMPORTAMENTO INADEQUADO
   async comportamentoInadequado() {
@@ -198,7 +221,7 @@ export class HomePage implements OnInit {
       message: '<img src ="/assets/comportamento/inadequado.png">' +
         '<div class="fonte-alert-comportamento">' +
         '<p class="bold">Que pena!</p>' +
-        '<b class="roxo">'+this.aluno.nome+'</b> teve um comportamento <b class="roxo">inadequado </b>' +
+        'Esse(a) aluno(a) teve um comportamento <b class="roxo">inadequado </b>' +
         'e irá acumular <b class="roxo">+1</b><img src ="/assets/comportamento/inadequado.png" class="icone-comportamento-texto"> </p> </div>',
       //iNPUTS DE DATA E DESCRIÇÃO
       inputs: [
@@ -216,19 +239,20 @@ export class HomePage implements OnInit {
       //BUTTONS CONFIRMAR OU CANCELAR INADEQUADO
       buttons: [
         {
+          text: 'Cancelar',
+          handler: () => {
+          }
+        },
+        {
+          cssClass: 'color="secondary"',
           text: '+1',
           handler: () => {
 
             this.nI++;
-          }
-        },
-        {
-          text: 'Cancelar',
-          handler: () => {
+            this.inadequadoBadge = true;
           }
         }
       ]
-
     });
     inadequado.present();
   }
